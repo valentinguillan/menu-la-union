@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,7 +11,14 @@
       background-color: #FFFFFF;
       color: #3C3F62;
     }
-        nav {
+    header {
+      text-align: center;
+      padding: 2rem;
+    }
+    header img {
+      max-width: 200px;
+    }
+    nav {
       position: sticky;
       top: 0;
       background-color: #F9E9D8;
@@ -38,14 +44,6 @@
     nav a:hover {
       text-decoration: underline;
     }
-
-    header {
-      text-align: center;
-      padding: 2rem;
-    }
-    header img {
-      max-width: 200px;
-    }
     section {
       padding: 2rem 1rem;
     }
@@ -61,7 +59,10 @@
       margin-bottom: 2rem;
     }
     .producto img {
-      max-width: 300px;
+      width: 100%;
+      max-width: 240px;
+      height: 200px;
+      object-fit: cover;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
@@ -74,297 +75,578 @@
       font-size: 0.9rem;
       text-align: center;
     }
+    .precios {
+      background-color: #f3f3f3;
+      border-radius: 6px;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .scroll-top {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      background: #E74139;
+      color: white;
+      padding: 10px 14px;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 1.2rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
   </style>
 </head>
 <body>
   <header>
+    <a id="top"></a>
     <img src="logotipo.svg" alt="Panadería & Confitería La Unión">
   </header>
 
-<nav>
-  <ul>
-    <li><a href="#confiteria">Confitería</a></li>
-    <li><a href="#panaderia">Panadería</a></li>
-    <li><a href="#pasteleria">Pastelería</a></li>
-    <li><a href="#bebidas">Bebidas</a></li>
-    <li><a href="#cafeteria">Cafetería</a></li>
-  </ul>
-</nav>
+  <nav>
+    <ul>
+      <li><a href="#confiteria">Confitería</a></li>
+      <li><a href="#panaderia">Panadería</a></li>
+      <li><a href="#pasteleria">Pastelería</a></li>
+      <li><a href="#bebidas">Bebidas</a></li>
+      <li><a href="#cafeteria">Cafetería</a></li>
+    </ul>
+  </nav>
 
-  <section id="confiteria">
-<h2 style="color: #E74139; text-align: center;">Confitería</h2>
+   <section id="confiteria">
+    <h2 style="color: #E74139;">Confitería</h2>
 
     <div class="producto">
-        <img src="productos_menu/empanadas.png" alt="Empanadas">
-        <h3>Empanadas</h3>
-        <p>Masa casera rellena con ingredientes seleccionados. ¡Sabrosas y listas para disfrutar!</p>
-        
+      <img src="productos_menu/empanadas.png" alt="Empanadas">
+      <h3>Empanadas</h3>
+      <p>Masa casera rellena con ingredientes seleccionados. ¡Sabrosas y listas para disfrutar!</p>
+      <div class="precios">
         <p><strong>Docena: $000</strong></p>
         <p><strong>Media docena: $000</strong></p>
         <p><strong>Unidad: $000</strong></p>
-        
+      </div>
     </div>
-    
-    <div class="producto">
-        <img src="productos_menu/menu_del_dia.png" alt="Menu Del Dia">
-        <h3>Menu Del Dia</h3>
-        <p>Una opción casera, variada y completa para disfrutar al mediodía.
-Consultá por disponibilidad.</p>
-        <p><strong>$000</strong></p>
-    </div>
-    
-    <div class="producto">
-        <img src="productos_menu/pizza_muzzarella.png" alt="Pizza Muzzarella">
-        <h3>Pizza Muzzarella</h3>
-        <p>Clásica pizza con muzzarella fundida y salsa casera.</p>
-        <p><strong>$000</strong></p>
-    </div>
-    
-    <div class="producto">
-        <img src="productos_menu/pizza_napolitana.png" alt="Pizza Napolitana">
-        <h3>Pizza Napolitana</h3>
-        <p>Muzzarella, tomate natural y un toque de orégano.</p>
-        <p><strong>$000</strong></p>
-    </div>
-    
-    <div class="producto">
-        <img src="productos_menu/Sandwich_betita.png" alt="Sandwich Betita">
-        <h3>Sandwich Betita</h3>
-        <p>Pan suave relleno con nuestras especialidades caseras.</p>
-        <p><strong>$000</strong></p>
-    </div>
-    
-    <div class="producto">
-        <img src="productos_menu/Sandwich_jamon_crudo.png" alt="Sandwich de Jamon Crudo">
-        <h3>Sandwich Jamon Crudo</h3>
-        <p>Jamón crudo de calidad en pan artesanal.</p>
-        <p><strong>$000</strong></p>
-    </div>
-    
-    <div class="producto">
-        <img src="productos_menu/Sandwich_jamon_queso.png" alt="Sandwich de Jamon Queso">
-        <h3>Sandwich Jamon Queso</h3>
-        <p>Clásico y delicioso, ideal para cualquier momento.</p>
-        <p><strong>$000</strong></p>
-    </div>
-    
-    <div class="producto">
-        <img src="productos_menu/Sandwich_lomito.png" alt="Sandwich de Lomito">
-        <h3>Sandwich Lomito</h3>
-        <p>Lomito tierno con ingredientes frescos..</p>
-        <p><strong>$000</strong></p>
-    </div>
-    
-    <div class="producto">
-        <img src="productos_menu/Sandwich_medialunas.png" alt="Sandwich de Medialunas con Jamon y Queso">
-        <h3>Sandwich Medialunas</h3>
-        <p>Relleno de jamón y queso en medialunas de manteca.</p>
-        <p><strong>$000</strong></p>
-    </div>
-    
-    <div class="producto">
-        <img src="productos_menu/Sandwich_miga.png" alt="Sandwich de Miga">
-        <h3>Sandwich Miga</h3>
-        <p>Fino y liviano, ideal para acompañar tus reuniones.</p>
-        <p><strong>$000</strong></p>
-    </div>
-    
-    <div class="producto">
-        <img src="productos_menu/Sandwich_milanesa.png" alt="Sandwich de Milanesa">
-        <h3>Sandwich Milanesa</h3>
-        <p>Milanesa crocante con lechuga, tomate y condimentos.</p>
-        <p><strong>$000</strong></p>
-    </div>
-    
-    <div class="producto">
-        <img src="productos_menu/Sandwich_salame.png" alt="Sandwich de Salame">
-        <h3>Sandwich Salame</h3>
-        <p> Pan suave con salame.</p>
-        <p><strong>$000</strong></p>
-    </div>
-    </section>
-<section id="panaderia">
-<h2 style="color: #E74139; text-align: center;">Panaderia</h2>
 
     <div class="producto">
-        <img src="productos_menu/alfajores.png" alt="Alfajores">
-        <h3>Alfajores</h3>
-        <p>Tradicionales alfajores con dulce de leche y baño de chocolate.</p>
-        
+      <img src="productos_menu/menu_del_dia.png" alt="Menú del Día">
+      <h3>Menú del Día</h3>
+      <p>Una opción casera, variada y completa para disfrutar al mediodía. Consultá por disponibilidad.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/pizza_muzzarella.png" alt="Pizza Muzzarella">
+      <h3>Pizza Muzzarella</h3>
+      <p>Clásica pizza con muzzarella fundida y salsa casera.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/pizza_especial.png" alt="Pizza Especial">
+      <h3>Pizza Especial</h3>
+      <p>Pizza especial con variedad de ingredientes seleccionados.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/porcion_papas_fritas.png" alt="Porción de Papas Fritas">
+      <h3>Porción de Papas Fritas</h3>
+      <p>Papas crocantes servidas al momento, ideales para acompañar.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/sandwich_lomo.png" alt="Sandwich de Lomo">
+      <h3>Sandwich de Lomo</h3>
+      <p>Lomo tierno, pan artesanal e ingredientes frescos.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/sandwich_milanesa.png" alt="Sandwich de Milanesa">
+      <h3>Sandwich de Milanesa</h3>
+      <p>Milanesa crocante con lechuga, tomate y condimentos.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/sandwich_patty.png" alt="Sandwich de Hamburguesa Paty">
+      <h3>Sandwich de Hamburguesa Paty</h3>
+      <p>Hamburguesa clásica con pan fresco y aderezos a elección.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/hamburguesa_simple_queso.png" alt="Hamburguesa La Unión con Queso (Simple)">
+      <h3>Hamburguesa La Unión con Queso (Simple)</h3>
+      <p>Jugosa hamburguesa con queso, servida en pan artesanal.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/hamburguesa_doble_queso.png" alt="Hamburguesa La Unión con Queso (Doble)">
+      <h3>Hamburguesa La Unión con Queso (Doble)</h3>
+      <p>Doble medallón con queso fundido, sabor potente.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/hamburguesa_simple_panceta.png" alt="Hamburguesa La Unión con Panceta (Simple)">
+      <h3>Hamburguesa La Unión con Panceta (Simple)</h3>
+      <p>Medallón con panceta crocante y pan suave.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/hamburguesa_doble_panceta.png" alt="Hamburguesa La Unión con Panceta (Doble)">
+      <h3>Hamburguesa La Unión con Panceta (Doble)</h3>
+      <p>Versión potente con doble medallón, queso y panceta.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/sandwich_fiambre.png" alt="Sandwich de Fiambre">
+      <h3>Sandwich de Fiambre</h3>
+      <p>Pan artesanal con selección de fiambres frescos.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/sandwich_chip.png" alt="Sandwich Chip">
+      <h3>Sandwich Chip</h3>
+      <p>Sandwich de chip relleno, suave y sabroso.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/sandwich_medialunas.png" alt="Sandwich de Medialunas">
+      <h3>Sandwich de Medialunas</h3>
+      <p>Medialunas rellenas con jamón y queso.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/sandwich_betitas.png" alt="Sandwich Betitas">
+      <h3>Sandwich Betitas</h3>
+      <p>Mini sandwichs con variedad de rellenos.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/sandwich_vegetariano.png" alt="Sandwich Vegetariano">
+      <h3>Sandwich Vegetariano</h3>
+      <p>Opciones frescas sin carne, ideales para todos los gustos.</p>
+      <p><strong>$000</strong></p>
+    </div>
+  </section>
+
+  <section id="panaderia">
+    <h2 style="color: #E74139;">Panadería</h2>
+
+    <div class="producto">
+      <img src="productos_menu/alfajores.png" alt="Alfajores">
+      <h3>Alfajores</h3>
+      <p>Tradicionales alfajores con dulce de leche y baño de chocolate.</p>
+      <div class="precios">
         <p><strong>Docena: $000</strong></p>
         <p><strong>Media docena: $000</strong></p>
         <p><strong>Unidad: $000</strong></p>
-        
+      </div>
     </div>
-    
+
     <div class="producto">
-        <img src="productos_menu/bizcocho_criollito.png" alt="Bizcocho Criollito">
-        <h3>Bizcocho Criollito</h3>
-        <p>Crujiente, salado y bien fueguino.</p>
+      <img src="productos_menu/alfajores_hojaldre.png" alt="Alfajores de Hojaldre">
+      <h3>Alfajores de Hojaldre</h3>
+      <p>Capas crocantes de hojaldre rellenas de dulce de leche.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/bizcocho_criollito.png" alt="Bizcocho Criollito">
+      <h3>Bizcocho Criollito</h3>
+      <p>Crujiente, salado y bien fueguino.</p>
+      <div class="precios">
         <p><strong>Precio por 1/4 kg: $000</strong></p>
+      </div>
     </div>
-    
+
     <div class="producto">
-        <img src="productos_menu/budin.png" alt="Budin">
-        <h3>Budin</h3>
-        <p>Bizcocho húmedo y suave, perfecto para el desayuno o la merienda.</p>
-        <p><strong>$000</strong></p>
-    </div>
-    
-    <div class="producto">
-        <img src="productos_menu/chipa.png" alt="Chipa">
-        <h3>Chipa</h3>
-        <p>Deliciosos bocaditos de queso, perfectos para compartir.</p>
+      <img src="productos_menu/palmeritas.png" alt="Palmeritas">
+      <h3>Palmeritas</h3>
+      <p>Hojaldres crocantes y dulces, perfectas para el mate.</p>
+      <div class="precios">
         <p><strong>Precio por 1/4 kg: $000</strong></p>
+      </div>
     </div>
-    
+
     <div class="producto">
-        <img src="productos_menu/chocolates.png" alt="Chocolates">
-        <h3>Chocolates</h3>
-        <p>Chocolates artesanales hechos con amor y materias primas de calidad.</p>
-        
+      <img src="productos_menu/raspaditas_chipacas.png" alt="Raspaditas y Chipacas">
+      <h3>Raspaditas y Chipacas</h3>
+      <p>Clásicos regionales de sabor inigualable.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/chipa.png" alt="Chipa">
+      <h3>Chipa</h3>
+      <p>Deliciosos bocaditos de queso, perfectos para compartir.</p>
+      <div class="precios">
+        <p><strong>Precio por 1/4 kg: $000</strong></p>
+      </div>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/facturas.png" alt="Facturas">
+      <h3>Facturas</h3>
+      <p>La clásica factura argentina con variedad de rellenos.</p>
+      <div class="precios">
+        <p><strong>Docena: $000</strong></p>
+        <p><strong>Media docena: $000</strong></p>
+        <p><strong>Unidad: $000</strong></p>
+      </div>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/pepas.png" alt="Pepas">
+      <h3>Pepas</h3>
+      <p>Galletitas dulces con corazón de membrillo.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/chocochips.png" alt="Chocochips">
+      <h3>Chocochips</h3>
+      <p>Galletitas con chispas de chocolate.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/cookies.png" alt="Cookies">
+      <h3>Cookies</h3>
+      <p>Galletas artesanales con mucho sabor.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/chocolates.png" alt="Chocolates Artesanales">
+      <h3>Chocolates Artesanales</h3>
+      <p>Delicias de chocolate hechas en casa con amor.</p>
+      <div class="precios">
         <p><strong>1/4 kg: $000</strong></p>
         <p><strong>1/2 kg: $000</strong></p>
         <p><strong>1 kg: $000</strong></p>
-        
+      </div>
     </div>
-    
-    <div class="producto">
-        <img src="productos_menu/cookies.png" alt="Cookies">
-        <h3>Cookies</h3>
-        <p>Galletas dulces con chips de chocolate.</p>
-        <p><strong>$000</strong></p>
-    </div>
-    
-    <div class="producto">
-        <img src="productos_menu/facturas.png" alt="Facturas">
-        <h3>Facturas</h3>
-        <p>La clásica factura argentina con variedad de rellenos.</p>
-        
-        <p><strong>Docena: $000</strong></p>
-        <p><strong>Media docena: $000</strong></p>
-        <p><strong>Unidad: $000</strong></p>
-        
-    </div>
-    
-    <div class="producto">
-        <img src="productos_menu/palmerita.png" alt="Palmerita">
-        <h3>Palmerita</h3>
-        <p>Hojaldre azucarado y dorado, ideal para acompañar el mate.</p>
-        <p><strong>Precio por 1/4 kg: $000</strong></p>
-    </div>
-    
-    <div class="producto">
-        <img src="productos_menu/pan.png" alt="Pan">
-        <h3>Pan</h3>
-        <p>Descripción editable aquí.</p>
-        <p><strong>$000</strong></p>
-    </div>
-    
-    <div class="producto">
-        <img src="productos_menu/pan_de_queso.png" alt="Pan De Queso">
-        <h3>Pan De Queso</h3>
-        <p>Descripción editable aquí.</p>
-        <p><strong>$000</strong></p>
-    </div>
-    </section>
-<section id="pasteleria">
-<h2 style="color: #E74139; text-align: center;">Pasteleria</h2>
 
     <div class="producto">
-        <img src="productos_menu/brownie.png" alt="Brownie">
-        <h3>Brownie</h3>
-        <p>Intenso sabor a chocolate con textura húmeda.</p>
-        <p><strong>$000</strong></p>
+      <img src="productos_menu/prepizzas.png" alt="Prepizzas">
+      <h3>Prepizzas</h3>
+      <p>Listas para llevar al horno, rápidas y sabrosas.</p>
+      <p><strong>$000</strong></p>
     </div>
-    
-    <div class="producto">
-        <img src="productos_menu/chocotorta.png" alt="Chocotorta">
-        <h3>Chocotorta</h3>
-        <p>Postre frío de galletas y crema de dulce de leche.</p>
-        <p><strong>$000</strong></p>
-    </div>
-    
-    <div class="producto">
-        <img src="productos_menu/churros.png" alt="Churros">
-        <h3>Churros</h3>
-        <p>Masa frita crocante, ideal con dulce de leche o chocolate.</p>
-        
-        <p><strong>Docena: $000</strong></p>
-        <p><strong>Media docena: $000</strong></p>
-        <p><strong>Unidad: $000</strong></p>
-        
-    </div>
-    
-    <div class="producto">
-        <img src="productos_menu/crumble.png" alt="Crumble">
-        <h3>Crumble</h3>
-        <p>Base dulce con cubierta crocante y frutas.</p>
-        <p><strong>$000</strong></p>
-    </div>
-    
-    <div class="producto">
-        <img src="productos_menu/lemon_pie.png" alt="Lemon Pie">
-        <h3>Lemon Pie</h3>
-        <p>Sabor cítrico y refrescante con merengue italiano.</p>
-        <p><strong>$000</strong></p>
-    </div>
-    
-    <div class="producto">
-        <img src="productos_menu/lingote_brownie.png" alt="Lingote Brownie">
-        <h3>Lingote Brownie</h3>
-        <p>Versión más compacta e intensa de nuestro brownie.</p>
-        <p><strong>$000</strong></p>
-    </div>
-    
-    <div class="producto">
-        <img src="productos_menu/macarons.png" alt="Macarons">
-        <h3>Macarons</h3>
-        <p>Delicadas galletas francesas con relleno cremoso.</p>
-        <p><strong>$000</strong></p>
-    </div>
-    
-    <div class="producto">
-        <img src="productos_menu/red_velvet.png" alt="Red Velvet">
-        <h3>Red Velvet</h3>
-        <p>Suave y esponjosa, con sabor a cacao y cobertura de crema.</p>
-        <p><strong>$000</strong></p>
-    </div>
-    </section>
-<section id="bebidas">
-<h2 style="color: #E74139; text-align: center;">Bebidas</h2>
+  </section>
+
+  <section id="pasteleria">
+    <h2 style="color: #E74139;">Pastelería</h2>
 
     <div class="producto">
-        <img src="productos_menu/licuado.png" alt="Licuado">
-        <h3>Licuado</h3>
-        <p>Fruta fresca, leche o agua y un toque de azúcar. Refrescante y natural.</p>
-        <p><strong>$000</strong></p>
+      <img src="productos_menu/arrollado.png" alt="Arrollado">
+      <h3>Arrollado</h3>
+      <p>Bizcochuelo suave enrollado con dulce de leche o crema.</p>
+      <p><strong>$000</strong></p>
     </div>
-    </section>
-<section id="cafeteria">
-<h2 style="color: #E74139; text-align: center;">Cafeteria</h2>
 
     <div class="producto">
-        <img src="productos_menu/cafe_cabrales.png" alt="Cafe Cabrales">
-        <h3>Cafe Cabrales</h3>
-        <p>Sabor intenso y aroma profundo, ideal para arrancar el día.</p>
-        <p><strong>$000</strong></p>
+      <img src="productos_menu/brownie.png" alt="Brownie">
+      <h3>Brownie</h3>
+      <p>Intenso sabor a chocolate con textura húmeda.</p>
+      <p><strong>$000</strong></p>
     </div>
-    
+
     <div class="producto">
-        <img src="productos_menu/cafe_nestle.png" alt="Cafe Nestle">
-        <h3>Cafe Nestle</h3>
-        <p>Suave y equilibrado, para acompañar un dulce o una charla.</p>
-        <p><strong>$000</strong></p>
+      <img src="productos_menu/lingote_brownie.png" alt="Lingote de Brownie">
+      <h3>Lingote de Brownie</h3>
+      <p>Versión individual más compacta de nuestro clásico brownie.</p>
+      <p><strong>$000</strong></p>
     </div>
-    
+
     <div class="producto">
-        <img src="productos_menu/capuccino.png" alt="Capuccino">
-        <h3>Capuccino</h3>
-        <p>Café espumoso con leche cremosa y un toque de cacao.</p>
-        <p><strong>$000</strong></p>
+      <img src="productos_menu/chocotorta.png" alt="Chocotorta">
+      <h3>Chocotorta</h3>
+      <p>Postre frío de galletitas de chocolate y crema de dulce de leche.</p>
+      <p><strong>$000</strong></p>
     </div>
-    </section>
+
+    <div class="producto">
+      <img src="productos_menu/crumble.png" alt="Crumble">
+      <h3>Crumble</h3>
+      <p>Base dulce, cubierta crocante y relleno de frutas.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/cheesecake.png" alt="Cheesecake">
+      <h3>Cheesecake</h3>
+      <p>Tarta suave de queso con base de galletas.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/imperial.png" alt="Imperial">
+      <h3>Imperial</h3>
+      <p>Postre clásico de capas dulces con crema y chocolate.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/lemon_pie.png" alt="Lemon Pie">
+      <h3>Lemon Pie</h3>
+      <p>Sabor cítrico y refrescante con merengue italiano.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/macarons.png" alt="Macarons">
+      <h3>Macarons</h3>
+      <p>Delicadas galletas francesas con relleno cremoso.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/milhoja.png" alt="Milhoja Porción">
+      <h3>Milhoja Porción</h3>
+      <p>Capas finas de hojaldre con crema pastelera o dulce de leche.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/mini_shot.png" alt="Mini Shot">
+      <h3>Mini Shot</h3>
+      <p>Postre individual en vaso, ideal para picadas dulces.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/pastafrola.png" alt="Pastafrola Porción">
+      <h3>Pastafrola Porción</h3>
+      <p>Clásica tarta de membrillo con masa suave.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/red_velvet.png" alt="Red Velvet">
+      <h3>Red Velvet</h3>
+      <p>Suave, esponjosa, con sabor a cacao y cobertura de crema.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/tartita_dulce_leche.png" alt="Tartita de Dulce de Leche">
+      <h3>Tartita de Dulce de Leche</h3>
+      <p>Base de masa suave con dulce de leche y decoración.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/tartita_ricota.png" alt="Tartita de Ricota">
+      <h3>Tartita de Ricota</h3>
+      <p>Relleno cremoso de ricota con base crocante.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/torta.png" alt="Torta">
+      <h3>Torta</h3>
+      <p>Torta artesanal por porción o entera. Consultá variedades.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/torta_galesa.png" alt="Torta Galesa">
+      <h3>Torta Galesa</h3>
+      <p>Tradicional torta húmeda con frutos secos y especias.</p>
+      <p><strong>$000</strong></p>
+    </div>
+  </section>
+
+
+  <section id="bebidas">
+    <h2 style="color: #E74139;">Bebidas</h2>
+
+    <div class="producto">
+      <img src="productos_menu/exprimido_naranja.png" alt="Exprimido de Naranja">
+      <h3>Exprimido de Naranja</h3>
+      <p>Zumo natural recién exprimido, sin conservantes.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/licuado.png" alt="Licuado">
+      <h3>Licuado</h3>
+      <p>Fruta fresca, leche o agua y un toque de azúcar. Refrescante y natural.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/chocolatada_caliente.png" alt="Chocolatada Caliente">
+      <h3>Chocolatada Caliente</h3>
+      <p>Bebida caliente a base de leche y cacao, ideal para el invierno.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/jugo_ades_200cc.png" alt="Jugo Ades 200cc">
+      <h3>Jugo Ades 200cc</h3>
+      <p>Bebida de soja con frutas, práctico y nutritivo.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/jugo_baggio_200cc.png" alt="Jugo Baggio 200cc">
+      <h3>Jugo Baggio 200cc</h3>
+      <p>Jugo de frutas 100% natural en formato individual.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/agua_1_5l.png" alt="Agua 1,5 L">
+      <h3>Agua 1,5 L</h3>
+      <p>Agua mineral natural sin gas, botella grande.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/agua_500cc.png" alt="Agua 500cc">
+      <h3>Agua 500cc</h3>
+      <p>Agua mineral natural sin gas, formato práctico.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/agua_sports_750cc.png" alt="Agua Sports 750cc">
+      <h3>Agua Sports 750cc</h3>
+      <p>Botella deportiva para hidratarte durante el día.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/aquarius_500cc.png" alt="Aquarius 500cc">
+      <h3>Aquarius 500cc</h3>
+      <p>Bebida isotónica y refrescante, ideal para rehidratar.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/cepita_300cc.png" alt="Cepita 300cc">
+      <h3>Cepita 300cc</h3>
+      <p>Jugo de frutas Cepita en formato individual.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/coca_mini.png" alt="Coca Cola Mini Lata">
+      <h3>Coca Cola Mini Lata</h3>
+      <p>Clásica gaseosa en presentación mini.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/coca_lata.png" alt="Coca Cola Lata">
+      <h3>Coca Cola Lata</h3>
+      <p>Refrescante gaseosa en lata tradicional.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/coca_500cc.png" alt="Coca Cola 500cc">
+      <h3>Coca Cola 500cc</h3>
+      <p>Gaseosa en botella de medio litro.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/levite_500cc.png" alt="Levite 500cc">
+      <h3>Levite 500cc</h3>
+      <p>Bebida saborizada baja en calorías.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/monster.png" alt="Monster">
+      <h3>Monster</h3>
+      <p>Bebida energizante para cuando necesitás un impulso.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/powerade.png" alt="Powerade">
+      <h3>Powerade</h3>
+      <p>Bebida deportiva con electrolitos para reponer energías.</p>
+      <p><strong>$000</strong></p>
+    </div>
+  </section>
+
+  <section id="cafeteria">
+    <h2 style="color: #E74139;">Cafetería</h2>
+
+    <!-- NESTLÉ -->
+    <div class="producto">
+      <img src="productos_menu/cafe_nestle_mediano.png" alt="Café Mediano Nestlé">
+      <h3>Café Mediano (Nestlé)</h3>
+      <p>Café suave y reconfortante en tamaño mediano.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/cafe_nestle_grande.png" alt="Café Grande Nestlé">
+      <h3>Café Grande (Nestlé)</h3>
+      <p>Una dosis generosa de energía en cada sorbo.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/capuccino_nestle_mediano.png" alt="Capuccino Mediano Nestlé">
+      <h3>Capuccino Mediano (Nestlé)</h3>
+      <p>Café espumoso con leche cremosa y un toque de cacao.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/capuccino_nestle_grande.png" alt="Capuccino Grande Nestlé">
+      <h3>Capuccino Grande (Nestlé)</h3>
+      <p>Más cantidad, mismo sabor suave y espumoso.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <!-- CABRALES -->
+    <div class="producto">
+      <img src="productos_menu/cafe_cabrales_chico.png" alt="Café Chico Cabrales">
+      <h3>Café Chico (Cabrales)</h3>
+      <p>Sabor intenso y profundo, ideal para arrancar el día.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/cafe_cabrales_mediano.png" alt="Café Mediano Cabrales">
+      <h3>Café Mediano (Cabrales)</h3>
+      <p>Clásico sabor Cabrales con equilibrio justo.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/cafe_cabrales_grande.png" alt="Café Grande Cabrales">
+      <h3>Café Grande (Cabrales)</h3>
+      <p>El doble de energía y aroma para continuar la jornada.</p>
+      <p><strong>$000</strong></p>
+    </div>
+
+    <div class="producto">
+      <img src="productos_menu/submarino.png" alt="Submarino">
+      <h3>Submarino</h3>
+      <p>Leche caliente con barra de chocolate que se derrite al sumergirse.</p>
+      <p><strong>$000</strong></p>
+    </div>
+  </section>
+
+<a href="#top" class="scroll-top">↑</a>
 
 </body>
 </html>
