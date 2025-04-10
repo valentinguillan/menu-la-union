@@ -23,14 +23,6 @@ Este es el sitio web del menú digital de **Panadería & Confitería La Unión**
     └── ... (más imágenes de productos)
 ```
 
-## 🚀 Cómo publicar
-
-1. Crear un repositorio público en GitHub.
-2. Subir todos los archivos y carpetas mencionados.
-3. Ir a **Settings > Pages**.
-4. Seleccionar la rama `main` y carpeta raíz (`/root`).
-5. Acceder al menú desde el link que te da GitHub Pages.
-
 ## 📸 Créditos
 
 Desarrollado por [Panadería & Confitería La Unión] 
