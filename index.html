@@ -12,6 +12,33 @@
       background-color: #FFFFFF;
       color: #3C3F62;
     }
+        nav {
+      position: sticky;
+      top: 0;
+      background-color: #F9E9D8;
+      padding: 0.5rem 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    nav ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    nav a {
+      text-decoration: none;
+      color: #E74139;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
     header {
       text-align: center;
       padding: 2rem;
@@ -53,6 +80,16 @@
   <header>
     <img src="logotipo.svg" alt="Panadería & Confitería La Unión">
   </header>
+
+<nav>
+  <ul>
+    <li><a href="#confiteria">Confitería</a></li>
+    <li><a href="#panaderia">Panadería</a></li>
+    <li><a href="#pasteleria">Pastelería</a></li>
+    <li><a href="#bebidas">Bebidas</a></li>
+    <li><a href="#cafeteria">Cafetería</a></li>
+  </ul>
+</nav>
 
   <section id="confiteria">
 <h2 style="color: #E74139; text-align: center;">Confitería</h2>
