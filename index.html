@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panadería & Confitería La Unión — Menú</title>
+  <meta name="description" content="Menú digital de Panadería & Confitería La Unión (Tolhuin, Tierra del Fuego, Argentina)." />
+  <link rel="stylesheet" href="./src/styles.css" />
+</head>
+<body>
+  <!--
+    ✏️ Cómo editar:
+    - Logotipo: reemplace /assets/logo.svg por su SVG final.
+    - Colores: vea variables CSS en :root (src/styles.css).
+    - Texto de categorías y productos: modifique el objeto DATA en src/main.js.
+    - Precios/variantes: edite el arreglo "variantes" de cada producto en src/main.js.
+    - Integración con planilla: vea función comentada loadFromCSV(url) en src/main.js.
+  -->
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a class="brand" href="#" aria-label="Inicio — Panadería &amp; Confitería La Unión">
+        <img src="./assets/logo.svg" alt="La Unión — Logo" width="128" height="32" loading="eager" />
+        <span class="brand-text">La Unión</span>
+      </a>
+      <button class="hamburger" aria-label="Abrir menú" aria-haspopup="true" aria-expanded="false">
+        <span aria-hidden="true">☰</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Tabs accesibles -->
+  <nav class="tabs-wrap" aria-label="Categorías de productos">
+    <div class="tabs" role="tablist" aria-orientation="horizontal">
+      <!-- Botones de tab; sus data-target deben coincidir con los IDs de los paneles -->
+      <button role="tab" id="tab-panaderia" class="tab is-active" aria-selected="true"
+              aria-controls="panel-panaderia" data-target="panaderia">
+        Panadería
+      </button>
+      <button role="tab" id="tab-confiteria" class="tab" aria-selected="false"
+              aria-controls="panel-confiteria" data-target="confiteria">
+        Confitería
+      </button>
+      <button role="tab" id="tab-pasteleria" class="tab" aria-selected="false"
+              aria-controls="panel-pasteleria" data-target="pasteleria">
+        Pastelería
+      </button>
+      <button role="tab" id="tab-cafeteria" class="tab" aria-selected="false"
+              aria-controls="panel-cafeteria" data-target="cafeteria">
+        Cafetería
+      </button>
+      <button role="tab" id="tab-bebidas" class="tab" aria-selected="false"
+              aria-controls="panel-bebidas" data-target="bebidas">
+        Bebidas
+      </button>
+    </div>
+  </nav>
+
+  <main id="main" class="content" tabindex="-1">
+    <!--
+      Cada panel es un contenedor con role="tabpanel".
+      IDs también funcionan como anclas para deep-links (#panaderia, #confiteria, etc.).
+    -->
+    <section id="panaderia" class="anchor-offset" aria-hidden="true"></section>
+    <section id="confiteria" class="anchor-offset" aria-hidden="true"></section>
+    <section id="pasteleria" class="anchor-offset" aria-hidden="true"></section>
+    <section id="cafeteria" class="anchor-offset" aria-hidden="true"></section>
+    <section id="bebidas" class="anchor-offset" aria-hidden="true"></section>
+
+    <section id="panel-panaderia" role="tabpanel" aria-labelledby="tab-panaderia" class="panel is-active"></section>
+    <section id="panel-confiteria" role="tabpanel" aria-labelledby="tab-confiteria" class="panel"></section>
+    <section id="panel-pasteleria" role="tabpanel" aria-labelledby="tab-pasteleria" class="panel"></section>
+    <section id="panel-cafeteria" role="tabpanel" aria-labelledby="tab-cafeteria" class="panel"></section>
+    <section id="panel-bebidas" role="tabpanel" aria-labelledby="tab-bebidas" class="panel"></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="socials" aria-label="Redes sociales">
+        <a href="https://www.instagram.com" aria-label="Instagram de La Unión" target="_blank" rel="noreferrer">
+          <!-- Ícono Instagram inline para evitar dependencias -->
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6zM18 6.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+          </svg>
+        </a>
+        <a href="https://www.facebook.com" aria-label="Facebook de La Unión" target="_blank" rel="noreferrer">
+          <!-- Ícono Facebook inline -->
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M22 12.07C22 6.48 17.52 2 11.93 2S1.86 6.48 1.86 12.07c0 4.99 3.64 9.13 8.4 9.94v-7.03H7.99v-2.9h2.27V9.41c0-2.24 1.33-3.48 3.37-3.48.98 0 2 .17 2 .17v2.2h-1.13c-1.11 0-1.46.69-1.46 1.4v1.68h2.49l-.4 2.9h-2.09V22c4.76-.81 8.4-4.95 8.4-9.93z"/>
+          </svg>
+        </a>
+      </div>
+      <p class="hashtag">#EternamenteAgradecidos</p>
+    </div>
+  </footer>
+
+  <script src="./src/main.js"></script>
+</body>
+</html>
