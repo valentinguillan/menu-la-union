@@ -1,78 +1,17 @@
 /* ===================================================================
    Menú La Unión — Lógica de Tabs + Render de productos
-   - Edita el objeto DATA para actualizar rótulos, productos y variantes.
-   - Precios: puedes incluirlos dentro de cada variante como string libre.
+   - Este archivo renderiza categorías, productos e imágenes.
+   - Si SHEET_CSV_URL tiene un CSV público de Google Sheets, se usa
+     la planilla y reemplaza el DATA local (fallback).
    =================================================================== */
 
-// Datos locales estáticos (placeholder).
-// Usa EXACTAMENTE los rótulos indicados por la marca.
+// Fallback local mínimo (se usa SOLO si no hay planilla o falla la carga)
 const DATA = {
-  "Panadería": [
-    { nombre: "Facturas", variantes: ["unidad", "1/2 docena", "docena"] },
-    { nombre: "Pan", variantes: ["precios por kg"] },
-    { nombre: "Pan rallado", variantes: [] },
-    { nombre: "Pan de pancho x doc", variantes: [] },
-    { nombre: "Pan de salvado", variantes: [] },
-    { nombre: "Pan super pancho x doc", variantes: [] },
-    { nombre: "Pan de chip x doc", variantes: [] },
-    { nombre: "Pan de miga (feta) x doc", variantes: [] },
-    { nombre: "Pan terraza x doc", variantes: [] },
-    { nombre: "Prepizzas", variantes: [] },
-    { nombre: "Tapas empanadas", variantes: [] },
-    { nombre: "Bizcocho – Criollito", variantes: ["1/4 kg", "1 kg"] },
-  ],
-  "Confitería": [
-    { nombre: "Alfajores", variantes: ["unidad", "calafate/ruibarbo", "6 unidades", "hojaldre"] },
-    { nombre: "Palitos – Palmeritas", variantes: ["1/4 kg"] },
-    { nombre: "Raspadita – Chipaca", variantes: ["1/4 kg"] },
-    { nombre: "Chipa – Pan de queso", variantes: ["1/4 kg"] },
-    { nombre: "Pepas / Chocochips / Otros", variantes: [] },
-    { nombre: "Cookies", variantes: [] },
-    { nombre: "Chocolates", variantes: ["1/4 kg", "1/2 kg", "1 kg"] },
-  ],
-  "Pastelería": [
-    { nombre: "Sandwiches", variantes: ["lomo", "milanesa", "hamburguesa", "queso simple/doble", "panceta simple/doble", "fiambre", "crudo", "miga 1/2 doc", "miga 3 unid", "chip x3", "medialunas x3", "betitas 1/2", "veg"] },
-    { nombre: "Pizzas", variantes: ["muzzarella", "especial"] },
-    { nombre: "Papas fritas porción", variantes: [] },
-    { nombre: "Brownie", variantes: [] },
-    { nombre: "Brownie lingote", variantes: [] },
-    { nombre: "Chocotorta", variantes: [] },
-    { nombre: "Crumble", variantes: [] },
-    { nombre: "Cheesecake", variantes: [] },
-    { nombre: "Imperial", variantes: [] },
-    { nombre: "Lemon Pie", variantes: [] },
-    { nombre: "Milhoja (porción)", variantes: [] },
-    { nombre: "Mini Shot", variantes: [] },
-    { nombre: "Pastaflora (porción)", variantes: [] },
-    { nombre: "Red Velvet", variantes: [] },
-    { nombre: "Arrollado", variantes: [] },
-    { nombre: "Tartitas dulce de leche", variantes: [] },
-    { nombre: "Tartitas ricota", variantes: [] },
-    { nombre: "Torta ricota", variantes: ["1 kg", "1/4"] },
-    { nombre: "Torta galesa", variantes: [] },
-    { nombre: "Torta kg", variantes: [] },
-    { nombre: "Macaron", variantes: [] },
-  ],
-  "Cafetería": [
-    { nombre: "Nestlé: Café", variantes: ["mediano", "grande"] },
-    { nombre: "Nestlé: Capuccino", variantes: ["mediano", "grande"] },
-    { nombre: "Cabrales: Café", variantes: ["chico", "mediano", "grande"] },
-    { nombre: "Cabrales: Submarino", variantes: [] },
-  ],
-  "Bebidas": [
-    { nombre: "Exprimido naranja 180cc", variantes: [] },
-    { nombre: "Licuados", variantes: [] },
-    { nombre: "Chocolatada caliente", variantes: [] },
-    { nombre: "Ades o Baggio 200cc", variantes: [] },
-    { nombre: "Agua", variantes: ["1.5 L", "750cc", "500cc mesa", "500cc estándar"] },
-    { nombre: "Aquarius 500cc", variantes: [] },
-    { nombre: "Cepita 300cc", variantes: [] },
-    { nombre: "Coca Cola", variantes: ["mini lata", "lata 473cc", "500cc"] },
-    { nombre: "Levite 500cc", variantes: [] },
-    { nombre: "Monster", variantes: [] },
-    { nombre: "Powerade", variantes: [] },
-    { nombre: "Cerveza lata 473cc", variantes: [] },
-  ],
+  "Panadería": [],
+  "Confitería": [],
+  "Pastelería": [],
+  "Cafetería": [],
+  "Bebidas": [],
 };
 
 /* ----------------------- Render Helpers ----------------------- */
@@ -95,21 +34,41 @@ function renderCategory(nombreCategoria, targetId){
   list.forEach(item => {
     const card = document.createElement("article");
     card.className = "card";
+
+    // Imagen
+    const figure = document.createElement("figure");
+    figure.className = "card-media";
+    const img = document.createElement("img");
+    img.src = item.img || "./assets/logo.svg";
+    img.alt = item.nombre || "";
+    img.loading = "lazy";
+    figure.appendChild(img);
+    card.appendChild(figure);
+
+    // Título
     const title = document.createElement("h3");
-    title.textContent = item.nombre;
+    title.textContent = item.nombre || "";
     card.appendChild(title);
 
-    if(Array.isArray(item.variantes) && item.variantes.length){
+    // Variantes con precio
+    if (Array.isArray(item.variantes) && item.variantes.length){
       const variants = document.createElement("div");
       variants.className = "variants";
       item.variantes.forEach(v => {
         const chip = document.createElement("span");
         chip.className = "variant";
-        chip.textContent = v;
+        const label = typeof v === "string" ? v : v.etiqueta;
+        const price = typeof v === "string" ? null : v.precio;
+        chip.textContent = price ? `${label} · $ ${price}` : label;
         variants.appendChild(chip);
       });
       card.appendChild(variants);
-    }else{
+    } else if (item.precio){
+      const p = document.createElement("p");
+      p.className = "note";
+      p.textContent = `$ ${item.precio}`;
+      card.appendChild(p);
+    } else {
       const note = document.createElement("p");
       note.className = "note";
       note.textContent = "—";
@@ -122,7 +81,7 @@ function renderCategory(nombreCategoria, targetId){
   mount.replaceChildren(grid);
 }
 
-// Render inicial
+// Render inicial (con fallback vacío, hasta que llegue la planilla)
 renderCategory("Panadería", "panaderia");
 renderCategory("Confitería", "confiteria");
 renderCategory("Pastelería", "pasteleria");
@@ -186,76 +145,86 @@ window.addEventListener("hashchange", initFromHash);
 initFromHash();
 
 /* ===================================================================
-   FUTURA INTEGRACIÓN: Google Sheets (CSV público)  — NO implementado
-   -------------------------------------------------------------------
-   1) Publica tu hoja de cálculo como CSV accesible públicamente.
-   2) Estructura sugerida de columnas (con encabezados exactos):
-      - categoria   (Texto EXACTO: Panadería, Confitería, Pastelería, Cafetería, Bebidas)
-      - producto    (Nombre del producto, ej: "Facturas")
-      - variantes   (Lista separada por |, ej: "unidad|1/2 docena|docena")
-      - nota        (Opcional; texto libre)
-   3) Cada fila representa un producto (o subproducto).
+   INTEGRACIÓN OPCIONAL CON GOOGLE SHEETS (CSV PÚBLICO)
+   ----------------------------------------------------
+   1) Publica tu hoja: Archivo → Compartir → Publicar en la web → CSV.
+   2) Usa una URL con este formato:
+      https://docs.google.com/spreadsheets/d/ID/export?format=csv&gid=GID
+   3) Cabeceras OBLIGATORIAS de columnas (exactas):
+      - categoria   (Panadería | Confitería | Pastelería | Cafetería | Bebidas)
+      - producto    (Nombre del producto, ej: "Sandwich de lomo")
+      - variantes   (lista separada por |, cada item puede ser "etiqueta:precio" o solo "etiqueta".
+                     Ej: "unidad:900|1/2 docena:4800|docena:8800")
+      - img         (opcional: URL absoluta o ruta relativa ./assets/img/archivo.jpg/png/svg)
+      - nota        (opcional)
+   4) Si una variante trae precio, se muestra como "etiqueta · $ precio".
+   5) Si la hoja no carga o la URL está vacía, se usan los datos locales de DATA.
+   =================================================================== */
 
-   Ejemplo de fila:
-   categoria=Panadería, producto=Facturas, variantes="unidad|1/2 docena|docena"
+// 👇👇 Tu CSV público (el que me pasaste)
+const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRInjVdTq9gCZKGcXjfXNEYdfyaD89yYjmQIcH67qbGOwRTlzUUeesIloyGnmhJw9Wcz-YLnZn9mGBl/pub?output=csv";
 
-   A futuro, puedes reemplazar el objeto DATA leyendo desde CSV con:
-==================================================================== */
-
-/*
 async function loadFromCSV(url){
-  // Descarga el CSV (debe ser público). SIN librerías externas.
-  const res = await fetch(url);
-  const csvText = await res.text();
+  try{
+    const res = await fetch(url, { cache: "no-store" });
+    if(!res.ok) throw new Error("No se pudo descargar el CSV");
+    const csvText = await res.text();
 
-  // Parseo mínimo del CSV (asume separador coma y sin comillas escapadas complejas).
-  const lines = csvText.split(/\r?\n/).filter(Boolean);
-  const headers = lines.shift().split(",");
+    const lines = csvText.split(/\r?\n/).filter(Boolean);
+    const headers = lines.shift().split(",").map(h => h.trim());
 
-  const idx = {
-    categoria: headers.indexOf("categoria"),
-    producto: headers.indexOf("producto"),
-    variantes: headers.indexOf("variantes"),
-    nota: headers.indexOf("nota"),
-  };
-
-  const nextData = { "Panadería":[], "Confitería":[], "Pastelería":[], "Cafetería":[], "Bebidas":[] };
-
-  for(const line of lines){
-    const cols = line.split(",");
-    const cat = cols[idx.categoria]?.trim();
-    const prod = cols[idx.producto]?.trim();
-    const vars = (cols[idx.variantes] || "").split("|").map(s => s.trim()).filter(Boolean);
-    const note = cols[idx.nota]?.trim();
-
-    if(nextData[cat]){
-      const entry = { nombre: prod, variantes: vars };
-      if(note) entry.note = note;
-      nextData[cat].push(entry);
-    }
-  }
-
-  // Reemplaza DATA y re-renderiza
-  Object.keys(nextData).forEach(cat => {
-    DATA[cat] = nextData[cat];
-  });
-
-  // Re-render de la pestaña activa
-  const activeBtn = document.querySelector('.tab.is-active');
-  if(activeBtn){
-    const key = activeBtn.dataset.target;
-    const map = {
-      "panaderia":"Panadería",
-      "confiteria":"Confitería",
-      "pasteleria":"Pastelería",
-      "cafeteria":"Cafetería",
-      "bebidas":"Bebidas",
+    const idx = {
+      categoria: headers.indexOf("categoria"),
+      producto: headers.indexOf("producto"),
+      variantes: headers.indexOf("variantes"),
+      img: headers.indexOf("img"),
+      nota: headers.indexOf("nota"),
     };
+
+    const nextData = { "Panadería":[], "Confitería":[], "Pastelería":[], "Cafetería":[], "Bebidas":[] };
+
+    for(const raw of lines){
+      const cols = raw.split(",");
+      const cat = (cols[idx.categoria] || "").trim();
+      const prod = (cols[idx.producto] || "").trim();
+      const img = (idx.img >= 0 ? (cols[idx.img] || "").trim() : "");
+      const nota = (idx.nota >= 0 ? (cols[idx.nota] || "").trim() : "");
+
+      // Variantes "etiqueta:precio|etiqueta:precio"
+      const varStr = (cols[idx.variantes] || "").trim();
+      const variantes = varStr
+        ? varStr.split("|").map(tok => {
+            const [etqRaw, precioRaw] = tok.split(":");
+            const etq = etqRaw?.trim();
+            const precio = precioRaw?.trim();
+            if(etq && precio && !Number.isNaN(Number(precio))){
+              return { etiqueta: etq, precio: Number(precio) };
+            }
+            return etq ? { etiqueta: etq } : null;
+          }).filter(Boolean)
+        : [];
+
+      if(nextData[cat] && prod){
+        const entry = { nombre: prod, variantes };
+        if(img) entry.img = img;
+        if(nota) entry.note = nota;
+        nextData[cat].push(entry);
+      }
+    }
+
+    // Reemplaza DATA y re-renderiza pestaña activa
+    Object.keys(nextData).forEach(cat => { DATA[cat] = nextData[cat]; });
+
+    const activeBtn = document.querySelector('.tab.is-active');
+    const key = activeBtn ? activeBtn.dataset.target : "panaderia";
+    const map = {"panaderia":"Panadería","confiteria":"Confitería","pasteleria":"Pastelería","cafeteria":"Cafetería","bebidas":"Bebidas"};
     renderCategory(map[key], key);
+  }catch(err){
+    console.warn("CSV no cargado:", err.message);
   }
 }
 
-// Para usarlo en el futuro:
-// loadFromCSV('https://docs.google.com/spreadsheets/d/.../pub?output=csv');
-*/
-
+// Activa automáticamente si pegaste una URL
+if(SHEET_CSV_URL){
+  loadFromCSV(SHEET_CSV_URL);
+}
