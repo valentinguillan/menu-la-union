@@ -210,3 +210,19 @@ body{
   justify-content:center;
 }
 .brand img{height:36px}
+
+
+/* Card media (producto con imagen) */
+.card-media{
+  margin: -6px -6px 6px;
+  border-radius: calc(var(--radius) - 8px);
+  overflow: hidden;
+  border:1px solid rgba(0,0,0,.06);
+  background: var(--beige);
+}
+.card-media img{
+  display:block;
+  width:100%;
+  height:160px;
+  object-fit:cover;
+}
