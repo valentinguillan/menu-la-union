@@ -1,7 +1,7 @@
 :root{
   --rojo:#E74139;
   --beige:#F9E9D8;
-  --azul:#2B4165;
+  --azul:#2B4165; /* deprecated as accent; using --rojo instead */
   --blanco:#FFFFFF;
 
   --text:#1d1f25;
@@ -43,7 +43,7 @@ body{
   align-items:center;
   gap:10px;
   text-decoration:none;
-  color:var(--azul);
+  color:var(--rojo);
   font-weight:700;
   letter-spacing:.2px;
 }
@@ -51,7 +51,7 @@ body{
 .brand-text{display:none}
 .hamburger{
   border:0;
-  background:var(--azul);
+  background:var(--rojo);
   color:var(--blanco);
   border-radius:12px;
   padding:8px 12px;
@@ -81,7 +81,7 @@ body{
   appearance:none;
   border:1px solid rgba(0,0,0,.1);
   background:var(--blanco);
-  color:var(--azul);
+  color:var(--rojo);
   border-radius:999px;
   padding:10px 14px;
   font-weight:600;
@@ -89,7 +89,7 @@ body{
   transition:transform .2s ease, background .2s ease;
 }
 .tab[aria-selected="true"], .tab.is-active{
-  background:var(--azul);
+  background:var(--rojo);
   color:var(--blanco);
 }
 .tab:focus-visible{
@@ -135,7 +135,7 @@ body{
 .card h3{
   margin:0;
   font-size:1.05rem;
-  color:var(--azul);
+  color:var(--rojo);
 }
 .card .variants{
   display:flex;
@@ -185,7 +185,7 @@ body{
 .hashtag{
   margin:0;
   font-weight:700;
-  color:var(--azul);
+  color:var(--rojo);
 }
 
 /* Anclas para deep-links con offset (header+tabs sticky) */
@@ -200,3 +200,13 @@ body{
 @media (prefers-reduced-motion: reduce){
   *{animation:none !important; transition:none !important}
 }
+
+
+/* Centered header variant */
+.header-centered{
+  justify-content:center;
+}
+.brand{
+  justify-content:center;
+}
+.brand img{height:36px}
