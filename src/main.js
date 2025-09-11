@@ -1,12 +1,13 @@
 /* ===================================================================
    Menú La Unión — Lógica de Tabs + Render de productos
-   - Edita el objeto DATA para actualizar rótulos, productos y variantes.
-   - Precios: puedes incluirlos dentro de cada variante como string libre.
+   - Este archivo renderiza categorías, productos e imágenes.
+   - Si SHEET_CSV_URL tiene un CSV público de Google Sheets, se usa
+     la planilla y reemplaza el DATA local (fallback).
    =================================================================== */
 
-// Datos locales estáticos (placeholder).
-// Usa EXACTAMENTE los rótulos indicados por la marca.
+// Fallback local mínimo (se usa SOLO si no hay planilla o falla la carga)
 const DATA = {
+<<<<<<< HEAD
   "Panadería": [
     { nombre: "Facturas", img: "./assets/img/facturas.svg", variantes: [{ etiqueta: "unidad", precio: 900 }, { etiqueta: "1/2 docena", precio: 4800 }, { etiqueta: "docena", precio: 8800 }] },
     { nombre: "Pan (precios por kg)", img: "./assets/img/pan-precios-por-kg.svg", variantes: [{ etiqueta: "kg", precio: 2500 }] },
@@ -88,6 +89,13 @@ const DATA = {
     { nombre: "Powerade", img: "./assets/img/powerade.svg", variantes: [{ etiqueta: "botella", precio: 1800 }] },
     { nombre: "Cerveza lata 473cc", img: "./assets/img/cerveza-lata-473cc.svg", variantes: [{ etiqueta: "lata", precio: 1700 }] }
   ]
+=======
+  "Panadería": [],
+  "Confitería": [],
+  "Pastelería": [],
+  "Cafetería": [],
+  "Bebidas": [],
+>>>>>>> 6a0317cb2fd63fb706a83e3669910a67c2d4a4c6
 };
 
 /* ----------------------- Render Helpers ----------------------- */
@@ -117,14 +125,18 @@ function renderCategory(nombreCategoria, targetId){
     figure.className = "card-media";
     const img = document.createElement("img");
     img.src = item.img || "./assets/logo.svg";
+<<<<<<< HEAD
     img.alt = item.nombre;
+=======
+    img.alt = item.nombre || "";
+>>>>>>> 6a0317cb2fd63fb706a83e3669910a67c2d4a4c6
     img.loading = "lazy";
     figure.appendChild(img);
     card.appendChild(figure);
 
     // Título
     const title = document.createElement("h3");
-    title.textContent = item.nombre;
+    title.textContent = item.nombre || "";
     card.appendChild(title);
 
     // Variantes con precio
@@ -158,7 +170,7 @@ function renderCategory(nombreCategoria, targetId){
   mount.replaceChildren(grid);
 }
 
-// Render inicial
+// Render inicial (con fallback vacío, hasta que llegue la planilla)
 renderCategory("Panadería", "panaderia");
 renderCategory("Confitería", "confiteria");
 renderCategory("Pastelería", "pasteleria");
@@ -222,76 +234,86 @@ window.addEventListener("hashchange", initFromHash);
 initFromHash();
 
 /* ===================================================================
-   FUTURA INTEGRACIÓN: Google Sheets (CSV público)  — NO implementado
-   -------------------------------------------------------------------
-   1) Publica tu hoja de cálculo como CSV accesible públicamente.
-   2) Estructura sugerida de columnas (con encabezados exactos):
-      - categoria   (Texto EXACTO: Panadería, Confitería, Pastelería, Cafetería, Bebidas)
-      - producto    (Nombre del producto, ej: "Facturas")
-      - variantes   (Lista separada por |, ej: "unidad|1/2 docena|docena")
-      - nota        (Opcional; texto libre)
-   3) Cada fila representa un producto (o subproducto).
+   INTEGRACIÓN OPCIONAL CON GOOGLE SHEETS (CSV PÚBLICO)
+   ----------------------------------------------------
+   1) Publica tu hoja: Archivo → Compartir → Publicar en la web → CSV.
+   2) Usa una URL con este formato:
+      https://docs.google.com/spreadsheets/d/ID/export?format=csv&gid=GID
+   3) Cabeceras OBLIGATORIAS de columnas (exactas):
+      - categoria   (Panadería | Confitería | Pastelería | Cafetería | Bebidas)
+      - producto    (Nombre del producto, ej: "Sandwich de lomo")
+      - variantes   (lista separada por |, cada item puede ser "etiqueta:precio" o solo "etiqueta".
+                     Ej: "unidad:900|1/2 docena:4800|docena:8800")
+      - img         (opcional: URL absoluta o ruta relativa ./assets/img/archivo.jpg/png/svg)
+      - nota        (opcional)
+   4) Si una variante trae precio, se muestra como "etiqueta · $ precio".
+   5) Si la hoja no carga o la URL está vacía, se usan los datos locales de DATA.
+   =================================================================== */
 
-   Ejemplo de fila:
-   categoria=Panadería, producto=Facturas, variantes="unidad|1/2 docena|docena"
+// 👇👇 Tu CSV público (el que me pasaste)
+const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRInjVdTq9gCZKGcXjfXNEYdfyaD89yYjmQIcH67qbGOwRTlzUUeesIloyGnmhJw9Wcz-YLnZn9mGBl/pub?output=csv";
 
-   A futuro, puedes reemplazar el objeto DATA leyendo desde CSV con:
-==================================================================== */
-
-/*
 async function loadFromCSV(url){
-  // Descarga el CSV (debe ser público). SIN librerías externas.
-  const res = await fetch(url);
-  const csvText = await res.text();
+  try{
+    const res = await fetch(url, { cache: "no-store" });
+    if(!res.ok) throw new Error("No se pudo descargar el CSV");
+    const csvText = await res.text();
 
-  // Parseo mínimo del CSV (asume separador coma y sin comillas escapadas complejas).
-  const lines = csvText.split(/\r?\n/).filter(Boolean);
-  const headers = lines.shift().split(",");
+    const lines = csvText.split(/\r?\n/).filter(Boolean);
+    const headers = lines.shift().split(",").map(h => h.trim());
 
-  const idx = {
-    categoria: headers.indexOf("categoria"),
-    producto: headers.indexOf("producto"),
-    variantes: headers.indexOf("variantes"),
-    nota: headers.indexOf("nota"),
-  };
-
-  const nextData = { "Panadería":[], "Confitería":[], "Pastelería":[], "Cafetería":[], "Bebidas":[] };
-
-  for(const line of lines){
-    const cols = line.split(",");
-    const cat = cols[idx.categoria]?.trim();
-    const prod = cols[idx.producto]?.trim();
-    const vars = (cols[idx.variantes] || "").split("|").map(s => s.trim()).filter(Boolean);
-    const note = cols[idx.nota]?.trim();
-
-    if(nextData[cat]){
-      const entry = { nombre: prod, variantes: vars };
-      if(note) entry.note = note;
-      nextData[cat].push(entry);
-    }
-  }
-
-  // Reemplaza DATA y re-renderiza
-  Object.keys(nextData).forEach(cat => {
-    DATA[cat] = nextData[cat];
-  });
-
-  // Re-render de la pestaña activa
-  const activeBtn = document.querySelector('.tab.is-active');
-  if(activeBtn){
-    const key = activeBtn.dataset.target;
-    const map = {
-      "panaderia":"Panadería",
-      "confiteria":"Confitería",
-      "pasteleria":"Pastelería",
-      "cafeteria":"Cafetería",
-      "bebidas":"Bebidas",
+    const idx = {
+      categoria: headers.indexOf("categoria"),
+      producto: headers.indexOf("producto"),
+      variantes: headers.indexOf("variantes"),
+      img: headers.indexOf("img"),
+      nota: headers.indexOf("nota"),
     };
+
+    const nextData = { "Panadería":[], "Confitería":[], "Pastelería":[], "Cafetería":[], "Bebidas":[] };
+
+    for(const raw of lines){
+      const cols = raw.split(",");
+      const cat = (cols[idx.categoria] || "").trim();
+      const prod = (cols[idx.producto] || "").trim();
+      const img = (idx.img >= 0 ? (cols[idx.img] || "").trim() : "");
+      const nota = (idx.nota >= 0 ? (cols[idx.nota] || "").trim() : "");
+
+      // Variantes "etiqueta:precio|etiqueta:precio"
+      const varStr = (cols[idx.variantes] || "").trim();
+      const variantes = varStr
+        ? varStr.split("|").map(tok => {
+            const [etqRaw, precioRaw] = tok.split(":");
+            const etq = etqRaw?.trim();
+            const precio = precioRaw?.trim();
+            if(etq && precio && !Number.isNaN(Number(precio))){
+              return { etiqueta: etq, precio: Number(precio) };
+            }
+            return etq ? { etiqueta: etq } : null;
+          }).filter(Boolean)
+        : [];
+
+      if(nextData[cat] && prod){
+        const entry = { nombre: prod, variantes };
+        if(img) entry.img = img;
+        if(nota) entry.note = nota;
+        nextData[cat].push(entry);
+      }
+    }
+
+    // Reemplaza DATA y re-renderiza pestaña activa
+    Object.keys(nextData).forEach(cat => { DATA[cat] = nextData[cat]; });
+
+    const activeBtn = document.querySelector('.tab.is-active');
+    const key = activeBtn ? activeBtn.dataset.target : "panaderia";
+    const map = {"panaderia":"Panadería","confiteria":"Confitería","pasteleria":"Pastelería","cafeteria":"Cafetería","bebidas":"Bebidas"};
     renderCategory(map[key], key);
+  }catch(err){
+    console.warn("CSV no cargado:", err.message);
   }
 }
 
-// Para usarlo en el futuro:
-// loadFromCSV('https://docs.google.com/spreadsheets/d/.../pub?output=csv');
-*/
-
+// Activa automáticamente si pegaste una URL
+if(SHEET_CSV_URL){
+  loadFromCSV(SHEET_CSV_URL);
+}
