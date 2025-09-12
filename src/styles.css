@@ -254,3 +254,15 @@ a,button{cursor:pointer}
 @media (prefers-reduced-motion: reduce){
   *{animation:none !important; transition:none !important}
 }
+
+/* Ocultar imágenes de productos en Cafetería y Bebidas */
+#panel-cafeteria .card-media,
+#panel-bebidas .card-media{
+  display: none;
+}
+
+/* Ajustar espaciamiento cuando no hay imagen */
+#panel-cafeteria .card,
+#panel-bebidas .card{
+  padding-top: 16px;
+}
