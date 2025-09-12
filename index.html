@@ -17,17 +17,19 @@
     - Integración con planilla: vea función comentada loadFromCSV(url) en src/main.js.
   -->
 
+<!-- Header -->
   <header class="site-header" role="banner">
     <div class="header-inner header-centered">
-      <a class="brand" href="#" aria-label="Inicio — Panadería &amp; Confitería La Unión">
-        <img src="./assets/logo.svg" alt="La Unión — Logo" width="160" height="40" loading="eager" />
-        <span class="brand-text">La Unión</span>
+      <a href="#" class="brand" aria-label="Inicio — Panadería La Unión">
+        <img src="./assets/logo.svg" alt="Panadería La Unión">
       </a>
     </div>
   </header>
 
+  
+
   <!-- Tabs accesibles -->
-  <nav class="tabs-wrap" aria-label="Categorías de productos">
+   <nav class="tabs-wrap" role="tablist" aria-label="Categorías">
     <div class="tabs" role="tablist" aria-orientation="horizontal">
       <!-- Botones de tab; sus data-target deben coincidir con los IDs de los paneles -->
       <button role="tab" id="tab-panaderia" class="tab is-active" aria-selected="true"
@@ -72,24 +74,27 @@
   </main>
 
   <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="socials" aria-label="Redes sociales">
-        <a href="https://www.instagram.com" aria-label="Instagram de La Unión" target="_blank" rel="noreferrer">
-          <!-- Ícono Instagram inline para evitar dependencias -->
-          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6zM18 6.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-          </svg>
-        </a>
-        <a href="https://www.facebook.com" aria-label="Facebook de La Unión" target="_blank" rel="noreferrer">
-          <!-- Ícono Facebook inline -->
-          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M22 12.07C22 6.48 17.52 2 11.93 2S1.86 6.48 1.86 12.07c0 4.99 3.64 9.13 8.4 9.94v-7.03H7.99v-2.9h2.27V9.41c0-2.24 1.33-3.48 3.37-3.48.98 0 2 .17 2 .17v2.2h-1.13c-1.11 0-1.46.69-1.46 1.4v1.68h2.49l-.4 2.9h-2.09V22c4.76-.81 8.4-4.95 8.4-9.93z"/>
-          </svg>
-        </a>
-      </div>
-      <p class="hashtag">#EternamenteAgradecidos</p>
+  <div class="footer-inner">
+    <div class="socials" aria-label="Redes sociales">
+      <a href="https://www.instagram.com/panaderialauniontolhuin/" 
+         aria-label="Instagram de La Unión" target="_blank" rel="noreferrer">
+        <!-- Ícono Instagram inline -->
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="#E74139">
+          <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6zM18 6.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+        </svg>
+      </a>
+      <a href="https://www.facebook.com/panaderialaunion" 
+         aria-label="Facebook de La Unión" target="_blank" rel="noreferrer">
+        <!-- Ícono Facebook inline -->
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="#E74139">
+          <path d="M22 12.07C22 6.48 17.52 2 11.93 2S1.86 6.48 1.86 12.07c0 4.99 3.64 9.13 8.4 9.94v-7.03H7.99v-2.9h2.27V9.41c0-2.24 1.33-3.48 3.37-3.48.98 0 2 .17 2 .17v2.2h-1.13c-1.11 0-1.46.69-1.46 1.4v1.68h2.49l-.4 2.9h-2.09V22c4.76-.81 8.4-4.95 8.4-9.93z"/>
+        </svg>
+      </a>
     </div>
-  </footer>
+    <p class="hashtag">#EternamenteAgradecidos</p>
+  </div>
+</footer>
+
 
   <script src="./src/main.js"></script>
 </body>
