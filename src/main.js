@@ -77,7 +77,7 @@ const DATA = {
     { nombre: "Pizza Muzzarella", img: "./assets/img/pizza-muzzarella.jpg", variantes: [
       { etiqueta: "Entera", precio: 14000 }
     ]},
-    { nombre: "Pizza Especial", img: "./assets/img/pizza-especial.jpg", variantes: [
+    { nombre: "Pizza Napolitana", img: "./assets/img/pizza-especial.jpg", variantes: [
       { etiqueta: "Entera", precio: 18000 }
     ]},
     { nombre: "Papas Fritas", img: "./assets/img/papas-fritas.jpg", variantes: [
