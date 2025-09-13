@@ -29,19 +29,28 @@ const DATA = {
     ]},
     { nombre: "Chipa – Pan de queso", img: "./assets/img/chipa-pan-de-queso.jpg", variantes: [
       { etiqueta: "1/4 Kg", precio: 5000 }
-    ]},
-    { nombre: "Cookies", img: "./assets/img/cookies.jpg", variantes: [
-      { etiqueta: "Unidad", precio: 5500 }
     ]}
   ],
   "Confitería": [
+    { nombre: "Combo Sandwich de Milanesa", img: "./assets/img/combo-de-milanesa.jpg", variantes: [
+      { etiqueta: "Milanesa + Fritas + Gaseosa", precio: 21000 },
+      { etiqueta: "+ Helado Soft", precio: 1000 }
+    ]},
+    { nombre: "Combo Sandwich de Lomo", img: "./assets/img/combo-de-lomo.jpg", variantes: [
+      { etiqueta: "Lomo + Fritas + Gaseosa", precio: 22000 },
+      { etiqueta: "+ Helado Soft", precio: 1000 }
+    ]},
+    { nombre: "Combo Hamburguesa", img: "./assets/img/combo-de-hamburguesa.jpg", variantes: [
+      { etiqueta: "Hamburguesa + Fritas + Gaseosa", precio: 15000 },
+      { etiqueta: "+ Helado Soft", precio: 1000 }
+    ]},
     { nombre: "Sandwich de Lomo", img: "./assets/img/sandwich-de-lomo.jpg", variantes: [
       { etiqueta: "Clásico", precio: 17500 }
     ]},
     { nombre: "Sandwich de Milanesa", img: "./assets/img/sandwich-de-milanesa.jpg", variantes: [
       { etiqueta: "Clásico", precio: 16500 }
     ]},
-    { nombre: "Sandwich de hamburguesa Paty", img: "./assets/img/sandwich-hamburguesa.jpg", variantes: [
+    { nombre: "Sandwich de Hamburguesa Paty", img: "./assets/img/sandwich-hamburguesa.jpg", variantes: [
       { etiqueta: "Clásico", precio: 14000 }
     ]},
     { nombre: "La Unión con Queso", img: "./assets/img/sandwich-queso.jpg", variantes: [
@@ -71,7 +80,7 @@ const DATA = {
     { nombre: "Sandwich Betitas", img: "./assets/img/sandwich-betitas.jpg", variantes: [
       { etiqueta: "1/2 Docena", precio: 9000 }
     ]},
-    { nombre: "Sandwich Vegano", img: "./assets/img/sandwich-veg.jpg", variantes: [
+    { nombre: "Sandwich Vegetariano", img: "./assets/img/sandwich-veg.jpg", variantes: [
       { etiqueta: "Clásico", precio: 11000 }
     ]},
     { nombre: "Pizza Muzzarella", img: "./assets/img/pizza-muzzarella.jpg", variantes: [
@@ -131,23 +140,14 @@ const DATA = {
     { nombre: "Milhoja", img: "./assets/img/milhoja.jpg", variantes: [
       { etiqueta: "Porción", precio: 4500 }
     ]},
-    { nombre: "Mini Shot", img: "./assets/img/mini-shot.jpg", variantes: [
-      { etiqueta: "Unidad", precio: 2500 }
-    ]},
     { nombre: "Pastaflora", img: "./assets/img/pastaflora.jpg", variantes: [
       { etiqueta: "Porción", precio: 2500 }
     ]},
     { nombre: "Red Velvet", img: "./assets/img/red-velvet.jpg", variantes: [
       { etiqueta: "Porción", precio: 7000 }
     ]},
-    { nombre: "Tartitas Dulce de Leche", img: "./assets/img/tartita-dulce-leche.jpg", variantes: [
-      { etiqueta: "Unidad", precio: 4500 }
-    ]},
-    { nombre: "Tartitas Ricota", img: "./assets/img/tartita-ricota.jpg", variantes: [
+    { nombre: "Tartita de Ricota", img: "./assets/img/tartita-ricota.jpg", variantes: [
       { etiqueta: "Unidad", precio: 5500 }
-    ]},
-    { nombre: "Torta Ricota", img: "./assets/img/torta-ricota.jpg", variantes: [
-      { etiqueta: "Porción", precio: 10000 }
     ]},
     { nombre: "Torta Galesa", img: "./assets/img/torta-galesa.jpg", variantes: [
       { etiqueta: "1 Kg", precio: 26000 }
@@ -157,6 +157,9 @@ const DATA = {
     ]},
     { nombre: "Macaron", img: "./assets/img/macaron.jpg", variantes: [
       { etiqueta: "Unidad", precio: 2500 }
+    ]},
+    { nombre: "Cookies", img: "./assets/img/cookies.jpg", variantes: [
+      { etiqueta: "Unidad", precio: 5500 }
     ]}
   ],
   "Cafetería": [
