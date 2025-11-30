@@ -218,7 +218,7 @@ const DATA = {
       { etiqueta: "Lata 473cc", precio: 3700 }
     ]},
   ]
-};
+ };
 
 /* ----------------------- Render Helpers ----------------------- */
 const panels = {
