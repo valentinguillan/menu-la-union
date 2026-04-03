@@ -91,9 +91,9 @@ const DATA = {
     { nombre: "Papas Fritas", img: "./assets/img/papas-fritas.jpg", variantes: [
       { etiqueta: "Porción", precio: 5000 }
     ]},
-    { nombre: "Menú", img: "./assets/img/menu.jpg", variantes: [
+    /*{ nombre: "Menú", img: "./assets/img/menu.jpg", variantes: [
       { etiqueta: "Plato", precio: 14000 }
-    ]},
+    ]},*/
     { nombre: "Empanadas", img: "./assets/img/empanadas.jpg", variantes: [
       { etiqueta: "Docena", precio: 25000 },
       { etiqueta: "Media Docena", precio: 13500 },
