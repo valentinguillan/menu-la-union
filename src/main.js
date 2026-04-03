@@ -8,14 +8,14 @@
 const DATA = {
   "Panadería": [
     { nombre: "Facturas", img: "./assets/img/facturas.jpg", variantes: [
-      { etiqueta: "Unidad", precio: 1200 },
-      { etiqueta: "1/2 Docena", precio: 6500 },
-      { etiqueta: "Docena", precio: 12000 }
+      { etiqueta: "Unidad", precio: 1300 },
+      { etiqueta: "1/2 Docena", precio: 7000 },
+      { etiqueta: "Docena", precio: 13000 }
     ]},
     { nombre: "Churros", img: "./assets/img/churros.jpg", variantes: [
-      { etiqueta: "Unidad", precio: 1200 },
-      { etiqueta: "1/2 Docena", precio: 6500 },
-      { etiqueta: "Docena", precio: 12000 }
+      { etiqueta: "Unidad", precio: 1300 },
+      { etiqueta: "1/2 Docena", precio: 7000 },
+      { etiqueta: "Docena", precio: 13000 }
     ]},
     { nombre: "Pan", img: "./assets/img/pan.jpg", variantes: [
       { etiqueta: "Kg", precio: 3000 }
@@ -27,85 +27,86 @@ const DATA = {
       { etiqueta: "1/4 Kg", precio: 4500 }
     ]},
     { nombre: "Chipa – Pan de queso", img: "./assets/img/chipa-pan-de-queso.jpg", variantes: [
-      { etiqueta: "1/4 Kg", precio: 5500 }
+      { etiqueta: "1/4 Kg", precio: 6000 }
     ]}
   ],
   "Confitería": [
     { nombre: "Combo Sandwich de Milanesa", img: "./assets/img/combo-de-milanesa.jpg", variantes: [
-      { etiqueta: "Milanesa + Fritas + Bebida", precio: 24000 },
+      { etiqueta: "Milanesa + Fritas + Bebida", precio: 25000 },
       { etiqueta: "+ Helado Soft", precio: 1000 }
     ]},
     { nombre: "Combo Sandwich de Lomo", img: "./assets/img/combo-de-lomo.jpg", variantes: [
-      { etiqueta: "Lomo + Fritas + Bebida", precio: 25000 },
+      { etiqueta: "Lomo + Fritas + Bebida", precio: 27000 },
       { etiqueta: "+ Helado Soft", precio: 1000 }
     ]},
     { nombre: "Combo Hamburguesa", img: "./assets/img/combo-de-hamburguesa.jpg", variantes: [
-      { etiqueta: "Hamburguesa doble + Fritas + Bebida", precio: 17000 },
+      { etiqueta: "Hamburguesa doble + Fritas + Bebida", precio: 16000 },
       { etiqueta: "+ Helado Soft", precio: 1000 }
     ]},
     { nombre: "Sandwich de Lomo", img: "./assets/img/sandwich-de-lomo.jpg", variantes: [
-      { etiqueta: "Clásico", precio: 19000 }
+      { etiqueta: "Clásico", precio: 22000 }
     ]},
     { nombre: "Sandwich de Milanesa", img: "./assets/img/sandwich-de-milanesa.jpg", variantes: [
-      { etiqueta: "Clásico", precio: 18000 }
+      { etiqueta: "Clásico", precio: 20000 }
     ]},
     { nombre: "Sandwich de Hamburguesa Paty", img: "./assets/img/sandwich-hamburguesa.jpg", variantes: [
-      { etiqueta: "Clásico", precio: 15500 }
+      { etiqueta: "Clásico", precio: 17500 }
     ]},
     { nombre: "La Unión con Queso", img: "./assets/img/sandwich-queso.jpg", variantes: [
-      { etiqueta: "Simple", precio: 12000 },
-      { etiqueta: "Doble", precio: 15000 }
+      { etiqueta: "Simple", precio: 13000 },
+      { etiqueta: "Doble", precio: 17000 }
     ]},
     { nombre: "La Unión con Panceta", img: "./assets/img/sandwich-panceta.jpg", variantes: [
-      { etiqueta: "Simple", precio: 13500 },
-      { etiqueta: "Doble", precio: 16500 }
+      { etiqueta: "Simple", precio: 15500 },
+      { etiqueta: "Doble", precio: 18500 }
     ]},
     { nombre: "Sandwich de Fiambre", img: "./assets/img/sandwich-fiambre.jpg", variantes: [
-      { etiqueta: "Clásico", precio: 7500 }
+      { etiqueta: "Clásico", precio: 8500 }
     ]},
     { nombre: "Sandwich de Crudo", img: "./assets/img/sandwich-crudo.jpg", variantes: [
-      { etiqueta: "Clásico", precio: 15000 }
+      { etiqueta: "Clásico", precio: 16000 }
     ]},
     { nombre: "Sandwich de Miga", img: "./assets/img/sandwich-miga.jpg", variantes: [
-      { etiqueta: "1/2 Docena", precio: 16500 },
-      { etiqueta: "3 Unidades", precio: 8500 }
+      { etiqueta: "Jamón y Queso · 1/2 Docena", precio: 17500 },
+      { etiqueta: "Jamón y Queso · 3 Unidades", precio: 9000 },
+      { etiqueta: "Otros sabores", precio: "Consultar" }
     ]},
     { nombre: "Sandwich Chip", img: "./assets/img/sandwich-chip.jpg", variantes: [
-      { etiqueta: "3 Unidades", precio: 5000 }
+      { etiqueta: "3 Unidades", precio: 6000 }
     ]},
     { nombre: "Sandwich Medialunas", img: "./assets/img/sandwich-medialunas.jpg", variantes: [
-      { etiqueta: "Unidad", precio: 3000 }
+      { etiqueta: "Unidad", precio: 3500 }
     ]},
     { nombre: "Sandwich Betitas", img: "./assets/img/sandwich-betitas.jpg", variantes: [
-      { etiqueta: "1/2 Docena", precio: 9500 }
+      { etiqueta: "1/2 Docena", precio: 11000 }
     ]},
     { nombre: "Sandwich Vegetariano", img: "./assets/img/sandwich-veg.jpg", variantes: [
-      { etiqueta: "Clásico", precio: 13000 }
+      { etiqueta: "Clásico", precio: 14000 }
     ]},
     { nombre: "Pizza Muzzarella", img: "./assets/img/pizza-muzzarella.jpg", variantes: [
-      { etiqueta: "Entera", precio: 15000 }
+      { etiqueta: "Entera", precio: 16000 }
     ]},
     { nombre: "Pizza Napolitana", img: "./assets/img/pizza-especial.jpg", variantes: [
       { etiqueta: "Entera", precio: 19000 }
     ]},
     { nombre: "Papas Fritas", img: "./assets/img/papas-fritas.jpg", variantes: [
-      { etiqueta: "Porción", precio: 5000 }
+      { etiqueta: "Porción", precio: 6000 }
     ]},
     /*{ nombre: "Menú", img: "./assets/img/menu.jpg", variantes: [
-      { etiqueta: "Plato", precio: 14000 }
+      { etiqueta: "Plato", precio: 15000 }
     ]},*/
     { nombre: "Empanadas", img: "./assets/img/empanadas.jpg", variantes: [
-      { etiqueta: "Docena", precio: 25000 },
-      { etiqueta: "Media Docena", precio: 13500 },
-      { etiqueta: "Unidad", precio: 2300 },
-      { etiqueta: "Cordero", precio: 3200 }
+      { etiqueta: "Docena", precio: 30000 },
+      { etiqueta: "Media Docena", precio: 16000 },
+      { etiqueta: "Unidad", precio: 3000 },
+      { etiqueta: "Cordero", precio: 3500 }
     ]}
   ],
   "Pastelería": [
     { nombre: "Alfajores", img: "./assets/img/alfajores.jpg", variantes: [
-      { etiqueta: "Unidad", precio: 2800 },
+      { etiqueta: "Unidad", precio: 3000 },
       { etiqueta: "6 Unidades", precio: 16000 },
-      { etiqueta: "Hojaldre", precio: 3500 }
+      { etiqueta: "Hojaldre", precio: 4000 }
     ]},
     { nombre: "Chocolates", img: "./assets/img/chocolates.jpg", variantes: [
       { etiqueta: "1/4 Kg", precio: 23000 },
@@ -116,63 +117,65 @@ const DATA = {
       { etiqueta: "Porción", precio: 10000 }
     ]},
     { nombre: "Brownie", img: "./assets/img/brownie.jpg", variantes: [
-      { etiqueta: "Porción", precio: 5900 }
+      { etiqueta: "Porción", precio: 6500 }
     ]},
     { nombre: "Brownie Lingote", img: "./assets/img/brownie-lingote.jpg", variantes: [
-      { etiqueta: "Unidad", precio: 7400 }
+      { etiqueta: "Unidad", precio: 8000 }
     ]},
     { nombre: "Chocotorta", img: "./assets/img/chocotorta.jpg", variantes: [
-      { etiqueta: "Porción", precio: 7400 }
+      { etiqueta: "Porción", precio: 8000 }
     ]},
     { nombre: "Crumble", img: "./assets/img/crumble.jpg", variantes: [
-      { etiqueta: "Porción", precio: 5900 }
+      { etiqueta: "Porción", precio: 6500 }
     ]},
     { nombre: "Cheesecake", img: "./assets/img/cheesecake.jpg", variantes: [
-      { etiqueta: "Porción", precio: 9000 }
+      { etiqueta: "Porción", precio: 10000 }
     ]},
     { nombre: "Imperial", img: "./assets/img/imperial.jpg", variantes: [
       { etiqueta: "Porción", precio: 12000 }
     ]},
     { nombre: "Lemon Pie", img: "./assets/img/lemon-pie.jpg", variantes: [
-      { etiqueta: "Porción", precio: 5900 }
+      { etiqueta: "Porción", precio: 6500 }
     ]},
     { nombre: "Milhoja", img: "./assets/img/milhoja.jpg", variantes: [
-      { etiqueta: "Porción", precio: 4900 }
+      { etiqueta: "Porción", precio: 5500 }
     ]},
     { nombre: "Pastaflora", img: "./assets/img/pastaflora.jpg", variantes: [
-      { etiqueta: "Porción", precio: 2600 }
+      { etiqueta: "Porción", precio: 3000 }
     ]},
     { nombre: "Red Velvet", img: "./assets/img/red-velvet.jpg", variantes: [
-      { etiqueta: "Porción", precio: 7400 }
+      { etiqueta: "Porción", precio: 8000 }
     ]},
     { nombre: "Tartita de Ricota", img: "./assets/img/tartita-ricota.jpg", variantes: [
-      { etiqueta: "Unidad", precio: 5900 }
+      { etiqueta: "Unidad", precio: 6500 }
     ]},
     { nombre: "Torta Galesa", img: "./assets/img/torta-galesa.jpg", variantes: [
-      { etiqueta: "1 Kg", precio: 27000 }
+      { etiqueta: "1 Kg", precio: 30000 }
     ]},
     { nombre: "Torta Kg", img: "./assets/img/torta.jpg", variantes: [
-      { etiqueta: "1 Kg", precio: 37000 }
+      { etiqueta: "1 Kg", precio: 39000 }
     ]},
     { nombre: "Macaron", img: "./assets/img/macaron.jpg", variantes: [
-      { etiqueta: "Unidad", precio: 2700 }
+      { etiqueta: "Unidad", precio: 3000 }
     ]},
     { nombre: "Cookies", img: "./assets/img/cookies.jpg", variantes: [
-      { etiqueta: "Unidad", precio: 6000 }
+      { etiqueta: "Unidad", precio: 6500 }
     ]}
   ],
   "Cafetería": [
     { nombre: "Nestlé: Café", img: "./assets/img/nestle-cafe.´jpg", variantes: [
-      { etiqueta: "Mediano", precio: 4000 },
-      { etiqueta: "Grande", precio: 6200 }
+      { etiqueta: "Mediano", precio: 4500 },
+      { etiqueta: "Grande", precio: 6500 },
+      { etiqueta: "Capuccino Mediano", precio: 4500 },
+      { etiqueta: "Capuccino Grande", precio: 6500 }
     ]},
        { nombre: "Cabrales: Café", img: "./assets/img/cabrales-cafe.jpg", variantes: [
-      { etiqueta: "Chico", precio: 2500 },
-      { etiqueta: "Mediano", precio: 4000 },
-      { etiqueta: "Grande", precio: 6200 }
+      { etiqueta: "Chico", precio: 3000 },
+      { etiqueta: "Mediano", precio: 4500 },
+      { etiqueta: "Grande", precio: 6500 }
     ]},
     { nombre: "Cabrales: Submarino", img: "./assets/img/cabrales-submarino.jpg", variantes: [
-      { etiqueta: "Taza", precio: 6200 }
+      { etiqueta: "Taza", precio: 6500 }
     ]}
   ],
   "Bebidas": [
@@ -183,30 +186,30 @@ const DATA = {
       { etiqueta: "Vaso", precio: 7000 }
     ]},
     { nombre: "Chocolatada caliente", img: "./assets/img/chocolatada.jpg", variantes: [
-      { etiqueta: "Taza", precio: 6200 }
+      { etiqueta: "Taza", precio: 6500 }
     ]},
     { nombre: "Ades o Baggio 200cc", img: "./assets/img/ades-baggio.jpg", variantes: [
-      { etiqueta: "Caja", precio: 1200 }
+      { etiqueta: "Caja", precio: 1300 }
     ]},
     { nombre: "Agua", img: "./assets/img/agua.jpg", variantes: [
       { etiqueta: "1.5 L", precio: 3500 },
-      { etiqueta: "750cc (sports)", precio: 2400 },
+      { etiqueta: "750cc (sports)", precio: 2500 },
       { etiqueta: "500cc estándar", precio: 2000 },
       { etiqueta: "500cc mesa (local)", precio: 1500 }
     ]},
     { nombre: "Aquarius 500cc", img: "./assets/img/aquarius.jpg", variantes: [
-      { etiqueta: "Botella", precio: 2500 }
+      { etiqueta: "Botella", precio: 3000 }
     ]},
     { nombre: "Cepita 300cc", img: "./assets/img/cepita.jpg", variantes: [
-      { etiqueta: "Botella", precio: 1400 }
+      { etiqueta: "Botella", precio: 1500 }
     ]},
     { nombre: "Coca Cola", img: "./assets/img/coca-cola.jpg", variantes: [
-      { etiqueta: "Mini lata", precio: 1700 },
-      { etiqueta: "Lata 473cc", precio: 2200 },
-      { etiqueta: "500cc", precio: 2800 }
+      { etiqueta: "Mini lata", precio: 2000 },
+      { etiqueta: "Lata 473cc", precio: 2500 },
+      { etiqueta: "500cc", precio: 3000 }
     ]},
     { nombre: "Levite", img: "./assets/img/levite.jpg", variantes: [
-      { etiqueta: "Botella 500cc", precio: 2500 }
+      { etiqueta: "Botella 500cc", precio: 3000 }
     ]},
     { nombre: "Monster", img: "./assets/img/monster.jpg", variantes: [
       { etiqueta: "Lata", precio: 4000 }
