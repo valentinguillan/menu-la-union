@@ -220,7 +220,36 @@ const DATA = {
     { nombre: "Cerveza", img: "./assets/img/cerveza.jpg", variantes: [
       { etiqueta: "Lata 473cc", precio: 3700 }
     ]},
-  ]
+  ],
+  "SIN TACC": [
+   { nombre: "Empanadas", img: "./assets/img/empanadas.jpg", variantes: [ 
+    { etiqueta: "Carne", precio: 4000 },
+    { etiqueta: "Jamón y Queso", precio: 4000 },
+    { etiqueta: "Verdura", precio: 4000 }
+  ]},
+  { nombre: "Muffins", img: "./assets/img/muffins.jpg", variantes: [ 
+    { etiqueta: "Unidad", precio: 4500 } 
+  ]},
+  { nombre: "Medialunas", img: "./assets/img/medialunas-sin-tacc.jpg", variantes: [ 
+    { etiqueta: "Unidad", precio: 3500 } 
+  ]}, 
+  { nombre: "Alfajor de Maicena", variantes: [ 
+    { etiqueta: "Unidad", precio: 5000 } 
+  ]},
+  { nombre: "Budín de Limón", variantes: [ 
+    { etiqueta: "Unidad", precio: 5200 } 
+  ]},
+  { nombre: "Bocadito de Vainilla", variantes: [ 
+    { etiqueta: "Unidad", precio: 2500 } 
+  ]},
+  { nombre: "Brownie", variantes: [ 
+    { etiqueta: "Unidad", precio: 4500 },
+    { etiqueta: "Porción grande", precio: 10000 }
+  ]},
+  { nombre: "Alfajor de Coco + Dulce de Leche", variantes: [ 
+    { etiqueta: "Unidad", precio: 8500 } 
+  ]},
+  ],
  };
 
 /* ----------------------- Render Helpers ----------------------- */
@@ -230,6 +259,7 @@ const panels = {
   "pasteleria": document.getElementById("panel-pasteleria"),
   "cafeteria": document.getElementById("panel-cafeteria"),
   "bebidas": document.getElementById("panel-bebidas"),
+  "sin-tacc": document.getElementById("panel-sin-tacc"),
 };
 
 function renderCategory(nombreCategoria, targetId){
@@ -245,14 +275,18 @@ function renderCategory(nombreCategoria, targetId){
     card.className = "card";
 
     // Imagen
-    const figure = document.createElement("figure");
-    figure.className = "card-media";
-    const img = document.createElement("img");
-    img.src = item.img || "./assets/logo.svg";
-    img.alt = item.nombre || "";
-    img.loading = "lazy";
-    figure.appendChild(img);
-    card.appendChild(figure);
+    if (item.img) {
+  const figure = document.createElement("figure");
+  figure.className = "card-media";
+
+  const img = document.createElement("img");
+  img.src = item.img;
+  img.alt = item.nombre || "";
+  img.loading = "lazy";
+
+  figure.appendChild(img);
+  card.appendChild(figure);
+}
 
     // Título
     const title = document.createElement("h3");
@@ -289,6 +323,7 @@ renderCategory("Confitería", "confiteria");
 renderCategory("Pastelería", "pasteleria");
 renderCategory("Cafetería", "cafeteria");
 renderCategory("Bebidas", "bebidas");
+renderCategory("SIN TACC", "sin-tacc");
 
 /* ----------------------- Tabs accesibles ----------------------- */
 const tabButtons = Array.from(document.querySelectorAll('[role="tab"]'));
@@ -331,7 +366,7 @@ tabButtons.forEach(b => b.addEventListener("keydown", onTabKeydown));
 
 function initFromHash(){
   const hash = (location.hash || "").replace("#","");
-  const valid = ["panaderia","confiteria","pasteleria","cafeteria","bebidas"];
+  const valid = ["panaderia","confiteria","pasteleria","cafeteria","bebidas","sin-tacc"];
   if(valid.includes(hash)){ activateTab(hash, false); }
   else { activateTab("panaderia", false); }
 }
