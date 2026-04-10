@@ -78,7 +78,7 @@ const DATA = {
       { etiqueta: "Unidad", precio: 3500 }
     ]},
     { nombre: "Sandwich Betitas", img: "./assets/img/sandwich-betitas.jpg", variantes: [
-      { etiqueta: "1/2 Docena", precio: 11000 }
+      { etiqueta: "1/2", precio: 11000 }
     ]},
     { nombre: "Sandwich Vegetariano", img: "./assets/img/sandwich-veg.jpg", variantes: [
       { etiqueta: "Clásico", precio: 14000 }
