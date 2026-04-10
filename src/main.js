@@ -32,16 +32,16 @@ const DATA = {
   ],
   "Confitería": [
     { nombre: "Combo Sandwich de Milanesa", img: "./assets/img/combo-de-milanesa.jpg", variantes: [
-      { etiqueta: "Milanesa + Fritas + Bebida", precio: 25000 },
-      { etiqueta: "+ Helado Soft", precio: 1000 }
+      { etiqueta: "Milanesa + Fritas + Bebida", precio: 25000 }/*,
+      { etiqueta: "+ Helado Soft", precio: 1000 }*/
     ]},
     { nombre: "Combo Sandwich de Lomo", img: "./assets/img/combo-de-lomo.jpg", variantes: [
-      { etiqueta: "Lomo + Fritas + Bebida", precio: 27000 },
-      { etiqueta: "+ Helado Soft", precio: 1000 }
+      { etiqueta: "Lomo + Fritas + Bebida", precio: 27000 }/*,
+      { etiqueta: "+ Helado Soft", precio: 1000 }*/
     ]},
     { nombre: "Combo Hamburguesa", img: "./assets/img/combo-de-hamburguesa.jpg", variantes: [
-      { etiqueta: "Hamburguesa doble + Fritas + Bebida", precio: 16000 },
-      { etiqueta: "+ Helado Soft", precio: 1000 }
+      { etiqueta: "Hamburguesa doble + Fritas + Bebida", precio: 16000 }/*,
+      { etiqueta: "+ Helado Soft", precio: 1000 }*/
     ]},
     { nombre: "Sandwich de Lomo", img: "./assets/img/sandwich-de-lomo.jpg", variantes: [
       { etiqueta: "Clásico", precio: 22000 }
