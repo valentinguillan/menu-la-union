@@ -176,18 +176,15 @@ const DATA = {
     ]},
     { nombre: "Cabrales: Submarino", img: "./assets/img/cabrales-submarino.jpg", variantes: [
       { etiqueta: "Taza", precio: 6500 }
-    ]}
-  ],
-  "Bebidas": [
+    ]},
     { nombre: "Exprimido Naranja 180cc", img: "./assets/img/exprimido-naranja.jpg", variantes: [
       { etiqueta: "Vaso", precio: 6000 }
     ]},
     { nombre: "Licuados", img: "./assets/img/licuados.´jpg", variantes: [
       { etiqueta: "Vaso", precio: 7000 }
-    ]},
-    { nombre: "Chocolatada caliente", img: "./assets/img/chocolatada.jpg", variantes: [
-      { etiqueta: "Taza", precio: 6500 }
-    ]},
+    ]}
+  ],
+  "Bebidas": [
     { nombre: "Ades o Baggio 200cc", img: "./assets/img/ades-baggio.jpg", variantes: [
       { etiqueta: "Caja", precio: 1300 }
     ]},
@@ -222,7 +219,7 @@ const DATA = {
     ]},
   ],
   "SIN TACC": [
-   { nombre: "Empanadas", img: "./assets/img/empanadas.jpg", variantes: [ 
+   { nombre: "Empanadas", img: "./assets/img/empanadasintac.jpg", variantes: [ 
     { etiqueta: "Carne", precio: 4000 },
     { etiqueta: "Jamón y Queso", precio: 4000 },
     { etiqueta: "Verdura", precio: 4000 }
