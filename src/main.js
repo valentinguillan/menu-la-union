@@ -40,7 +40,7 @@ const DATA = {
       { etiqueta: "+ Helado Soft", precio: 1000 }*/
     ]},
     { nombre: "Combo Hamburguesa", img: "./assets/img/combo-de-hamburguesa.jpg", variantes: [
-      { etiqueta: "Hamburguesa doble + Fritas + Bebida", precio: 16000 }/*,
+      { etiqueta: "Hamburguesa Simple + Fritas + Bebida", precio: 16000 }/*,
       { etiqueta: "+ Helado Soft", precio: 1000 }*/
     ]},
     { nombre: "Sandwich de Lomo", img: "./assets/img/sandwich-de-lomo.jpg", variantes: [
