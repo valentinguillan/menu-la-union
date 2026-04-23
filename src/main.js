@@ -71,10 +71,10 @@ const DATA = {
       { etiqueta: "Jamón y Queso · 3 Unidades", precio: 9000 },
       { etiqueta: "Otros sabores", precio: "Consultar" }
     ]},
-    { nombre: "Sandwich Chip", img: "./assets/img/sandwich-chip.jpg", variantes: [
+    { nombre: "Chips con jamón y queso", img: "./assets/img/sandwich-chip.jpg", variantes: [
       { etiqueta: "3 Unidades", precio: 6000 }
     ]},
-    { nombre: "Sandwich Medialunas", img: "./assets/img/sandwich-medialunas.jpg", variantes: [
+    { nombre: "Medialuna con jamón y queso", img: "./assets/img/sandwich-medialunas.jpg", variantes: [
       { etiqueta: "Unidad", precio: 3500 }
     ]},
     { nombre: "Sandwich Betitas", img: "./assets/img/sandwich-betitas.jpg", variantes: [
