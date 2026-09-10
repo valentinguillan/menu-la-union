@@ -163,58 +163,58 @@ const DATA = {
     ]}
   ],
   "Cafetería": [
-    { nombre: "Nestlé: Café", img: "./assets/img/nestle-cafe.´jpg", variantes: [
+    { nombre: "Nestlé: Café", variantes: [
       { etiqueta: "Mediano", precio: 5000 },
       { etiqueta: "Grande", precio: 7000 },
       { etiqueta: "Capuccino Mediano", precio: 5000 },
       { etiqueta: "Capuccino Grande", precio: 7000 }
     ]},
-       { nombre: "Cabrales: Café", img: "./assets/img/cabrales-cafe.jpg", variantes: [
+       { nombre: "Cabrales: Café", variantes: [
       { etiqueta: "Chico", precio: 3500 },
       { etiqueta: "Mediano", precio: 5000 },
       { etiqueta: "Grande", precio: 7000 }
     ]},
-    { nombre: "Cabrales: Submarino", img: "./assets/img/cabrales-submarino.jpg", variantes: [
+    { nombre: "Cabrales: Submarino", variantes: [
       { etiqueta: "Taza", precio: 7000 }
     ]},
-    { nombre: "Exprimido Naranja 180cc", img: "./assets/img/exprimido-naranja.jpg", variantes: [
+    { nombre: "Exprimido Naranja 180cc", variantes: [
       { etiqueta: "Vaso", precio: 7000 }
     ]},
-    { nombre: "Licuados", img: "./assets/img/licuados.´jpg", variantes: [
+    { nombre: "Licuados", variantes: [
       { etiqueta: "Vaso", precio: 8000 }
     ]}
   ],
   "Bebidas": [
-    { nombre: "Ades o Baggio 200cc", img: "./assets/img/ades-baggio.jpg", variantes: [
+    { nombre: "Ades o Baggio 200cc", variantes: [
       { etiqueta: "Caja", precio: 1500 }
     ]},
-    { nombre: "Agua", img: "./assets/img/agua.jpg", variantes: [
+    { nombre: "Agua", variantes: [
       { etiqueta: "1.5 L", precio: 4000 },
       { etiqueta: "750cc (sports)", precio: 2800 },
       { etiqueta: "500cc estándar", precio: 2500 },
       { etiqueta: "500cc mesa (local)", precio: 1500 }
     ]},
-    { nombre: "Aquarius 500cc", img: "./assets/img/aquarius.jpg", variantes: [
+    { nombre: "Aquarius 500cc", variantes: [
       { etiqueta: "Botella", precio: 3000 }
     ]},
-    { nombre: "Cepita 300cc", img: "./assets/img/cepita.jpg", variantes: [
+    { nombre: "Cepita 300cc", variantes: [
       { etiqueta: "Botella", precio: 1500 }
     ]},
-    { nombre: "Coca Cola", img: "./assets/img/coca-cola.jpg", variantes: [
+    { nombre: "Coca Cola", variantes: [
       { etiqueta: "Mini lata", precio: 2500 },
       { etiqueta: "Lata 473cc", precio: 3000 },
       { etiqueta: "500cc", precio: 3500 }
     ]},
-    { nombre: "Levite", img: "./assets/img/levite.jpg", variantes: [
+    { nombre: "Levite", variantes: [
       { etiqueta: "Botella 500cc", precio: 3000 }
     ]},
-    { nombre: "Monster", img: "./assets/img/monster.jpg", variantes: [
+    { nombre: "Monster", variantes: [
       { etiqueta: "Lata", precio: 5000 }
     ]},
-    { nombre: "Powerade", img: "./assets/img/powerade.jpg", variantes: [
+    { nombre: "Powerade", variantes: [
       { etiqueta: "Botella", precio: 4500 }
     ]},
-    { nombre: "Cerveza", img: "./assets/img/cerveza.jpg", variantes: [
+    { nombre: "Cerveza", variantes: [
       { etiqueta: "Lata 473cc", precio: 3700 }
     ]},
   ],
@@ -280,6 +280,8 @@ function renderCategory(nombreCategoria, targetId){
   img.src = item.img;
   img.alt = item.nombre || "";
   img.loading = "lazy";
+  img.decoding = "async";
+  img.addEventListener("error", () => figure.remove());
 
   figure.appendChild(img);
   card.appendChild(figure);
@@ -295,10 +297,21 @@ function renderCategory(nombreCategoria, targetId){
       const variants = document.createElement("div");
       variants.className = "variants";
       item.variantes.forEach(v => {
-        const chip = document.createElement("span");
-        chip.className = "variant";
-        chip.textContent = `${v.etiqueta} · $ ${v.precio}`;
-        variants.appendChild(chip);
+        const row = document.createElement("div");
+        row.className = "variant";
+
+        const label = document.createElement("span");
+        label.className = "variant-label";
+        label.textContent = v.etiqueta;
+
+        const price = document.createElement("span");
+        price.className = "variant-price";
+        price.textContent = typeof v.precio === "number"
+          ? `$ ${new Intl.NumberFormat("es-AR").format(v.precio)}`
+          : v.precio;
+
+        row.append(label, price);
+        variants.appendChild(row);
       });
       card.appendChild(variants);
     } else {
@@ -326,20 +339,28 @@ renderCategory("SIN TACC", "sin-tacc");
 const tabButtons = Array.from(document.querySelectorAll('[role="tab"]'));
 const tabPanels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
 
-function activateTab(targetKey, setHash=true){
+function activateTab(targetKey, setHash=true, moveFocus=false){
   tabButtons.forEach(btn => {
     const isActive = btn.dataset.target === targetKey;
     btn.classList.toggle("is-active", isActive);
     btn.setAttribute("aria-selected", String(isActive));
-    if(isActive) btn.focus({preventScroll:true});
+    btn.tabIndex = isActive ? 0 : -1;
+    if(isActive && moveFocus){
+      btn.focus({preventScroll:true});
+      btn.scrollIntoView({behavior:"smooth", block:"nearest", inline:"center"});
+    }
   });
-  tabPanels.forEach(p => p.classList.toggle("is-active", p.id === `panel-${targetKey}`));
+  tabPanels.forEach(p => {
+    const isActive = p.id === `panel-${targetKey}`;
+    p.classList.toggle("is-active", isActive);
+    p.hidden = !isActive;
+  });
   if(setHash) history.replaceState(null, "", `#${targetKey}`);
 }
 
 function handleClickTab(e){
   const key = e.currentTarget.dataset.target;
-  activateTab(key);
+  activateTab(key, true, true);
 }
 tabButtons.forEach(b => b.addEventListener("click", handleClickTab));
 
@@ -356,8 +377,7 @@ function onTabKeydown(e){
   }
   e.preventDefault();
   const next = tabButtons[nextIdx];
-  next.focus();
-  next.click();
+  activateTab(next.dataset.target, true, true);
 }
 tabButtons.forEach(b => b.addEventListener("keydown", onTabKeydown));
 
