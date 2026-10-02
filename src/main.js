@@ -774,7 +774,7 @@ const DATA = {
       ]
     }
   ],
-  "Sandwich Heladera": [
+  "Sándwiches fríos": [
     {
       "nombre": "Miga pollo",
       "variantes": [
@@ -1270,7 +1270,7 @@ function renderCategory(nombreCategoria, targetId){
 // Render inicial
 renderCategory("Panadería", "panaderia");
 renderCategory("Confitería", "confiteria");
-renderCategory("Sandwich Heladera", "sandwich-heladera");
+renderCategory("Sándwiches fríos", "sandwich-heladera");
 renderCategory("Pastelería", "pasteleria");
 renderCategory("Dulces", "dulces");
 renderCategory("Cafetería", "cafeteria");
