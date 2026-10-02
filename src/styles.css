@@ -177,6 +177,22 @@ button {
   gap: 18px;
 }
 
+.group-title {
+  grid-column: 1 / -1;
+  margin: 14px 0 0;
+  padding: 14px 18px;
+  color: var(--blanco);
+  background: var(--rojo);
+  border-radius: 16px;
+  font-size: clamp(1.12rem, 2vw, 1.35rem);
+  font-weight: 800;
+  letter-spacing: .02em;
+}
+
+.group-title:first-child {
+  margin-top: 0;
+}
+
 .card {
   min-width: 0;
   overflow: hidden;
@@ -264,12 +280,14 @@ button {
 
 /* Las categorías sin fotografías mantienen una lectura compacta */
 #panel-cafeteria .card-media,
-#panel-bebidas .card-media {
+#panel-bebidas .card-media,
+#panel-sin-tacc .card-media {
   display: none;
 }
 
 #panel-cafeteria .card h3,
-#panel-bebidas .card h3 {
+#panel-bebidas .card h3,
+#panel-sin-tacc .card h3 {
   padding-top: 22px;
 }
 
