@@ -194,29 +194,87 @@ const DATA = {
       ]
     },
     {
-      "nombre": "Sandwich de Miga",
+      "nombre": "Sándwiches de miga",
       "img": "./assets/img/sandwich-miga.jpg",
       "variantes": [
         {
-          "etiqueta": "Jamón y Queso · 1/2 Docena",
+          "etiqueta": "Pollo · 1/2 docena",
+          "precio": 25000
+        },
+        {
+          "etiqueta": "Pollo · 3 unidades",
+          "precio": 13000
+        },
+        {
+          "etiqueta": "Carne · 1/2 docena",
+          "precio": 25000
+        },
+        {
+          "etiqueta": "Carne · 3 unidades",
+          "precio": 13000
+        },
+        {
+          "etiqueta": "Crudo y queso · 1/2 docena",
+          "precio": 25000
+        },
+        {
+          "etiqueta": "Crudo y queso · 3 unidades",
+          "precio": 13000
+        },
+        {
+          "etiqueta": "Primavera · 1/2 docena",
+          "precio": 20000
+        },
+        {
+          "etiqueta": "Primavera · 3 unidades",
+          "precio": 11000
+        },
+        {
+          "etiqueta": "Huevo · 1/2 docena",
+          "precio": 20000
+        },
+        {
+          "etiqueta": "Huevo · 3 unidades",
+          "precio": 11000
+        },
+        {
+          "etiqueta": "Jamón y queso · 1/2 docena",
           "precio": 19000
         },
         {
-          "etiqueta": "Jamón y Queso · 3 Unidades",
+          "etiqueta": "Jamón y queso · 3 unidades",
           "precio": 10000
-        },
-        {
-          "etiqueta": "Otros sabores",
-          "precio": "Consultar"
         }
       ]
     },
     {
-      "nombre": "Chips con jamón y queso",
+      "nombre": "Betitas",
+      "img": "./assets/img/sandwich-betitas.jpg",
+      "variantes": [
+        {
+          "etiqueta": "Carne · media docena",
+          "precio": 13000
+        },
+        {
+          "etiqueta": "Pollo · media docena",
+          "precio": 13000
+        },
+        {
+          "etiqueta": "Jamón y queso · media docena",
+          "precio": 13000
+        }
+      ]
+    },
+    {
+      "nombre": "Chips",
       "img": "./assets/img/sandwich-chip.jpg",
       "variantes": [
         {
-          "etiqueta": "3 Unidades",
+          "etiqueta": "Jamón y queso · 3 unidades",
+          "precio": 7500
+        },
+        {
+          "etiqueta": "Jamón, bondiola, salame y queso · 3 unidades",
           "precio": 7500
         }
       ]
@@ -228,16 +286,6 @@ const DATA = {
         {
           "etiqueta": "Unidad",
           "precio": 3500
-        }
-      ]
-    },
-    {
-      "nombre": "Sandwich Betitas",
-      "img": "./assets/img/sandwich-betitas.jpg",
-      "variantes": [
-        {
-          "etiqueta": "1/2",
-          "precio": 13000
         }
       ]
     },
@@ -774,131 +822,6 @@ const DATA = {
       ]
     }
   ],
-  "Sándwiches fríos": [
-    {
-      "nombre": "Miga pollo",
-      "variantes": [
-        {
-          "etiqueta": "1/2 docena",
-          "precio": 25000
-        },
-        {
-          "etiqueta": "3 unidades",
-          "precio": 13000
-        }
-      ]
-    },
-    {
-      "nombre": "Miga carne",
-      "variantes": [
-        {
-          "etiqueta": "1/2 docena",
-          "precio": 25000
-        },
-        {
-          "etiqueta": "3 unidades",
-          "precio": 13000
-        }
-      ]
-    },
-    {
-      "nombre": "Miga crudo y queso",
-      "variantes": [
-        {
-          "etiqueta": "1/2 docena",
-          "precio": 25000
-        },
-        {
-          "etiqueta": "3 unidades",
-          "precio": 13000
-        }
-      ]
-    },
-    {
-      "nombre": "Miga primavera",
-      "variantes": [
-        {
-          "etiqueta": "1/2 docena",
-          "precio": 20000
-        },
-        {
-          "etiqueta": "3 unidades",
-          "precio": 11000
-        }
-      ]
-    },
-    {
-      "nombre": "Miga huevo",
-      "variantes": [
-        {
-          "etiqueta": "1/2 docena",
-          "precio": 20000
-        },
-        {
-          "etiqueta": "3 unidades",
-          "precio": 11000
-        }
-      ]
-    },
-    {
-      "nombre": "Miga jamón y queso",
-      "variantes": [
-        {
-          "etiqueta": "1/2 docena",
-          "precio": 19000
-        },
-        {
-          "etiqueta": "3 unidades",
-          "precio": 10000
-        }
-      ]
-    },
-    {
-      "nombre": "Betitas carne",
-      "variantes": [
-        {
-          "etiqueta": "Media docena",
-          "precio": 13000
-        }
-      ]
-    },
-    {
-      "nombre": "Betita pollo",
-      "variantes": [
-        {
-          "etiqueta": "Media docena",
-          "precio": 13000
-        }
-      ]
-    },
-    {
-      "nombre": "Betita jamón y queso",
-      "variantes": [
-        {
-          "etiqueta": "Media docena",
-          "precio": 13000
-        }
-      ]
-    },
-    {
-      "nombre": "Chips jamón y queso",
-      "variantes": [
-        {
-          "etiqueta": "3 unidades",
-          "precio": 7500
-        }
-      ]
-    },
-    {
-      "nombre": "Chips jamón, bondiola, salame y queso",
-      "variantes": [
-        {
-          "etiqueta": "3 unidades",
-          "precio": 7500
-        }
-      ]
-    }
-  ],
   "Dulces": [
     {
       "nombre": "Calafate",
@@ -1185,7 +1108,6 @@ const DATA = {
 const panels = {
   "panaderia": document.getElementById("panel-panaderia"),
   "confiteria": document.getElementById("panel-confiteria"),
-  "sandwich-heladera": document.getElementById("panel-sandwich-heladera"),
   "pasteleria": document.getElementById("panel-pasteleria"),
   "dulces": document.getElementById("panel-dulces"),
   "cafeteria": document.getElementById("panel-cafeteria"),
@@ -1270,7 +1192,6 @@ function renderCategory(nombreCategoria, targetId){
 // Render inicial
 renderCategory("Panadería", "panaderia");
 renderCategory("Confitería", "confiteria");
-renderCategory("Sándwiches fríos", "sandwich-heladera");
 renderCategory("Pastelería", "pasteleria");
 renderCategory("Dulces", "dulces");
 renderCategory("Cafetería", "cafeteria");
@@ -1325,8 +1246,9 @@ tabButtons.forEach(b => b.addEventListener("keydown", onTabKeydown));
 
 function initFromHash(){
   const hash = (location.hash || "").replace("#","");
-  const valid = ["panaderia","confiteria","sandwich-heladera","pasteleria","dulces","cafeteria","bebidas","sin-tacc"];
-  if(valid.includes(hash)){ activateTab(hash, false); }
+  const valid = ["panaderia","confiteria","pasteleria","dulces","cafeteria","bebidas","sin-tacc"];
+  if(hash === "sandwich-heladera"){ activateTab("confiteria", false); }
+  else if(valid.includes(hash)){ activateTab(hash, false); }
   else { activateTab("panaderia", false); }
 }
 window.addEventListener("hashchange", initFromHash);
