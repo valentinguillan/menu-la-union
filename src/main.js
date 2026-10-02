@@ -735,36 +735,120 @@ const DATA = {
   ],
   "SIN TACC": [
     {
+      "grupo": "CELIBRAND",
       "nombre": "Empanadas",
-      "img": "./assets/img/empanadasintac.jpg",
       "variantes": [
         {
-          "etiqueta": "Carne",
-          "precio": 4000
-        },
-        {
-          "etiqueta": "Jamón y Queso",
-          "precio": 4000
-        },
-        {
-          "etiqueta": "Verdura",
-          "precio": 4000
+          "etiqueta": "3 unidades",
+          "precio": 15000
         }
       ]
     },
     {
-      "nombre": "Muffins",
-      "img": "./assets/img/muffins.jpg",
+      "grupo": "CELIBRAND",
+      "nombre": "Pepas",
+      "variantes": [
+        {
+          "etiqueta": "1/4 kg",
+          "precio": 12000
+        }
+      ]
+    },
+    {
+      "grupo": "CELIBRAND",
+      "nombre": "Alfajores de maicena",
+      "variantes": [
+        {
+          "etiqueta": "6 unidades",
+          "precio": 12000
+        }
+      ]
+    },
+    {
+      "grupo": "CELIBRAND",
+      "nombre": "Medialunas",
+      "variantes": [
+        {
+          "etiqueta": "4 unidades",
+          "precio": 15000
+        }
+      ]
+    },
+    {
+      "grupo": "CELIBRAND",
+      "nombre": "Brownie",
       "variantes": [
         {
           "etiqueta": "Unidad",
-          "precio": 4500
+          "precio": 11500
         }
       ]
     },
     {
-      "nombre": "Medialunas",
-      "img": "./assets/img/medialunas-sin-tacc.jpg",
+      "grupo": "CELIBRAND",
+      "nombre": "Tartas",
+      "variantes": [
+        {
+          "etiqueta": "Verdura · Unidad",
+          "precio": 12000
+        },
+        {
+          "etiqueta": "Jamón y queso · Unidad",
+          "precio": 12000
+        }
+      ]
+    },
+    {
+      "grupo": "CELIBRAND",
+      "nombre": "Chipás",
+      "variantes": [
+        {
+          "etiqueta": "1/4 kg",
+          "precio": 12000
+        }
+      ]
+    },
+    {
+      "grupo": "LOS CANELOS",
+      "nombre": "Empanadas",
+      "variantes": [
+        {
+          "etiqueta": "Jamón y queso · Unidad",
+          "precio": 6000
+        },
+        {
+          "etiqueta": "Verdura · Unidad",
+          "precio": 6000
+        },
+        {
+          "etiqueta": "Carne · Unidad",
+          "precio": 6000
+        }
+      ]
+    },
+    {
+      "grupo": "LOS CANELOS",
+      "nombre": "Medialuna",
+      "variantes": [
+        {
+          "etiqueta": "Unidad",
+          "precio": 3000
+        }
+      ]
+    },
+    {
+      "grupo": "LOS CANELOS",
+      "nombre": "Alfajor coco + dulce de leche",
+      "variantes": [
+        {
+          "etiqueta": "Unidad",
+          "precio": 7000
+        }
+      ]
+    },
+    {
+      "grupo": "LOS CANELOS",
+      "nombre": "Bocaditos de vainilla",
       "variantes": [
         {
           "etiqueta": "Unidad",
@@ -773,7 +857,8 @@ const DATA = {
       ]
     },
     {
-      "nombre": "Alfajor de Maicena",
+      "grupo": "LOS CANELOS",
+      "nombre": "Muffins de naranja con chips de chocolate",
       "variantes": [
         {
           "etiqueta": "Unidad",
@@ -782,42 +867,12 @@ const DATA = {
       ]
     },
     {
-      "nombre": "Budín de Limón",
-      "variantes": [
-        {
-          "etiqueta": "Unidad",
-          "precio": 5200
-        }
-      ]
-    },
-    {
-      "nombre": "Bocadito de Vainilla",
-      "variantes": [
-        {
-          "etiqueta": "Unidad",
-          "precio": 2500
-        }
-      ]
-    },
-    {
+      "grupo": "LOS CANELOS",
       "nombre": "Brownie",
       "variantes": [
         {
           "etiqueta": "Unidad",
-          "precio": 4500
-        },
-        {
-          "etiqueta": "Porción grande",
-          "precio": 10000
-        }
-      ]
-    },
-    {
-      "nombre": "Alfajor de Coco + Dulce de Leche",
-      "variantes": [
-        {
-          "etiqueta": "Unidad",
-          "precio": 8500
+          "precio": 5000
         }
       ]
     }
@@ -1123,7 +1178,17 @@ function renderCategory(nombreCategoria, targetId){
   const grid = document.createElement("div");
   grid.className = "cards";
 
+  let currentGroup = null;
+
   list.forEach(item => {
+    if (item.grupo && item.grupo !== currentGroup) {
+      currentGroup = item.grupo;
+      const groupTitle = document.createElement("h2");
+      groupTitle.className = "group-title";
+      groupTitle.textContent = item.grupo;
+      grid.appendChild(groupTitle);
+    }
+
     const card = document.createElement("article");
     card.className = "card";
 
