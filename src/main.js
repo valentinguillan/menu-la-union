@@ -610,15 +610,6 @@ const DATA = {
           "precio": 7000
         }
       ]
-    },
-    {
-      "nombre": "Licuados",
-      "variantes": [
-        {
-          "etiqueta": "Vaso",
-          "precio": 8000
-        }
-      ]
     }
   ],
   "Bebidas": [
