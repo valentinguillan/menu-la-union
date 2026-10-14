@@ -35,11 +35,11 @@ const DATA = {
         },
         {
           "etiqueta": "1/2 Docena",
-          "precio": 7500
+          "precio": 9000
         },
         {
           "etiqueta": "Docena",
-          "precio": 14000
+          "precio": 15000
         }
       ]
     },
