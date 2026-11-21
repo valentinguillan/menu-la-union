@@ -21,7 +21,7 @@ const DATA = {
         },
         {
           "etiqueta": "Docena",
-          "precio": 15000
+          "precio": 16000
         }
       ]
     },
@@ -59,7 +59,7 @@ const DATA = {
       "variantes": [
         {
           "etiqueta": "1/4 Kg",
-          "precio": 5000
+          "precio": 5500
         }
       ]
     },
@@ -69,7 +69,7 @@ const DATA = {
       "variantes": [
         {
           "etiqueta": "1/4 Kg",
-          "precio": 5000
+          "precio": 5500
         }
       ]
     },
@@ -111,7 +111,7 @@ const DATA = {
       "variantes": [
         {
           "etiqueta": "Hamburguesa Simple + Fritas + Bebida",
-          "precio": 17000
+          "precio": 20000
         }
       ]
     },
@@ -239,7 +239,7 @@ const DATA = {
         },
         {
           "etiqueta": "Jamón y queso · 1/2 docena",
-          "precio": 19000
+          "precio": 20000
         },
         {
           "etiqueta": "Jamón y queso · 3 unidades",
@@ -253,15 +253,15 @@ const DATA = {
       "variantes": [
         {
           "etiqueta": "Carne · media docena",
-          "precio": 13000
+          "precio": 14000
         },
         {
           "etiqueta": "Pollo · media docena",
-          "precio": 13000
+          "precio": 14000
         },
         {
           "etiqueta": "Jamón y queso · media docena",
-          "precio": 13000
+          "precio": 14000
         }
       ]
     },
@@ -271,11 +271,11 @@ const DATA = {
       "variantes": [
         {
           "etiqueta": "Jamón y queso · 3 unidades",
-          "precio": 7500
+          "precio": 8000
         },
         {
           "etiqueta": "Jamón, bondiola, salame y queso · 3 unidades",
-          "precio": 7500
+          "precio": 8000
         }
       ]
     },
@@ -295,7 +295,7 @@ const DATA = {
       "variantes": [
         {
           "etiqueta": "Clásico",
-          "precio": 17000
+          "precio": 18000
         }
       ]
     },
@@ -305,7 +305,7 @@ const DATA = {
       "variantes": [
         {
           "etiqueta": "Entera",
-          "precio": 19000
+          "precio": 20000
         }
       ]
     },
@@ -315,7 +315,7 @@ const DATA = {
       "variantes": [
         {
           "etiqueta": "Entera",
-          "precio": 23000
+          "precio": 24000
         }
       ]
     },
@@ -419,7 +419,7 @@ const DATA = {
       "variantes": [
         {
           "etiqueta": "Unidad",
-          "precio": 10000
+          "precio": 11000
         }
       ]
     },
@@ -429,7 +429,7 @@ const DATA = {
       "variantes": [
         {
           "etiqueta": "Porción",
-          "precio": 9000
+          "precio": 10000
         }
       ]
     },
@@ -439,7 +439,7 @@ const DATA = {
       "variantes": [
         {
           "etiqueta": "Porción",
-          "precio": 8000
+          "precio": 9000
         }
       ]
     },
@@ -449,7 +449,7 @@ const DATA = {
       "variantes": [
         {
           "etiqueta": "Porción",
-          "precio": 12000
+          "precio": 13000
         }
       ]
     },
@@ -469,7 +469,7 @@ const DATA = {
       "variantes": [
         {
           "etiqueta": "Porción",
-          "precio": 8000
+          "precio": 9000
         }
       ]
     },
@@ -479,7 +479,7 @@ const DATA = {
       "variantes": [
         {
           "etiqueta": "Porción",
-          "precio": 6000
+          "precio": 7000
         }
       ]
     },
@@ -489,7 +489,7 @@ const DATA = {
       "variantes": [
         {
           "etiqueta": "Porción",
-          "precio": 3500
+          "precio": 4000
         }
       ]
     },
@@ -539,7 +539,7 @@ const DATA = {
       "variantes": [
         {
           "etiqueta": "Unidad",
-          "precio": 3500
+          "precio": 4000
         }
       ]
     },
@@ -560,11 +560,11 @@ const DATA = {
       "variantes": [
         {
           "etiqueta": "Mediano",
-          "precio": 5000
+          "precio": 5500
         },
         {
           "etiqueta": "Grande",
-          "precio": 7500
+          "precio": 8000
         },
         {
           "etiqueta": "Capuccino Mediano",
@@ -585,11 +585,11 @@ const DATA = {
         },
         {
           "etiqueta": "Mediano",
-          "precio": 5000
+          "precio": 5500
         },
         {
           "etiqueta": "Grande",
-          "precio": 7500
+          "precio": 8000
         }
       ]
     },
@@ -598,7 +598,7 @@ const DATA = {
       "variantes": [
         {
           "etiqueta": "Taza",
-          "precio": 7500
+          "precio": 8000
         }
       ]
     },
@@ -640,7 +640,7 @@ const DATA = {
         },
         {
           "etiqueta": "750cc (sports)",
-          "precio": 2800
+          "precio": 3000
         },
         {
           "etiqueta": "500cc estándar",
@@ -878,7 +878,7 @@ const DATA = {
         },
         {
           "etiqueta": "Dulce 40 g",
-          "precio": 5000
+          "precio": 5500
         },
         {
           "etiqueta": "Licor 250 cc",
@@ -899,7 +899,7 @@ const DATA = {
         },
         {
           "etiqueta": "Dulce 40 g",
-          "precio": 5000
+          "precio": 5500
         },
         {
           "etiqueta": "Licor 250 cc",
@@ -920,7 +920,7 @@ const DATA = {
         },
         {
           "etiqueta": "Dulce 40 g",
-          "precio": 5000
+          "precio": 5500
         },
         {
           "etiqueta": "Licor 250 cc",
@@ -941,7 +941,7 @@ const DATA = {
         },
         {
           "etiqueta": "Dulce 40 g",
-          "precio": 5000
+          "precio": 5500
         },
         {
           "etiqueta": "Licor 250 cc",
@@ -1035,7 +1035,7 @@ const DATA = {
       "variantes": [
         {
           "etiqueta": "Promo",
-          "precio": 25000
+          "precio": 26000
         }
       ],
       "nota": "Válida para calafate, frambuesa, frutos patagónicos y ruibarbo."
